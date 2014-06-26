@@ -1,0 +1,5 @@
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/SharedLogic/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/SharedLogic/bin/Debug/SharedLogic.dll.mdb
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/SharedLogic/bin/Debug/SharedLogic.dll
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/SharedLogic/obj/Debug/SharedLogic.dll
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/SharedLogic/obj/Debug/SharedLogic.dll.mdb

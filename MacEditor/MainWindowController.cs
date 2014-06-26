@@ -15,6 +15,7 @@ namespace MacEditor
 		public MainWindowController (IntPtr handle) : base (handle)
 		{
 			Initialize ();
+			count = 0;
 		}
 		
 		// Called when created directly from a XIB file
@@ -37,12 +38,20 @@ namespace MacEditor
 
 		#endregion
 
+		private int count;
+
 		//strongly typed window accessor
 		public new MainWindow Window {
 			get {
 				return (MainWindow)base.Window;
 			}
 		}
+
+		partial void Click_Button(NSObject sender){
+
+			LabelField.StringValue = string.Format("ButtonClicked {0} times", count++);
+		}
+
 	}
 }
 

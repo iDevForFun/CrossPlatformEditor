@@ -1,0 +1,6 @@
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/WindowsEditor/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/WindowsEditor/obj/Debug/WindowsEditor.Properties.Resources.resources
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/WindowsEditor/bin/Debug/WindowsEditor.exe.mdb
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/WindowsEditor/bin/Debug/WindowsEditor.exe
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/WindowsEditor/obj/Debug/WindowsEditor.exe
+/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/WindowsEditor/obj/Debug/WindowsEditor.exe.mdb
