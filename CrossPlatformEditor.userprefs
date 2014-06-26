@@ -1,6 +1,15 @@
-﻿<Properties MonoDevelop.MonoMac.LastXamMacNagTime="26/06/2014 10:55:22">
+﻿<Properties MonoDevelop.MonoMac.LastXamMacNagTime="26/06/2014 14:35:27">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CrossPlatformLogic/Network/INetworkClient.cs">
+    <Files>
+      <File FileName="MacEditor/MainWindowController.cs" Line="1" Column="1" />
+      <File FileName="CrossPlatformLogic/ImageLoader.cs" Line="1" Column="1" />
+      <File FileName="MacEditor/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="MacEditor/MainWindow.designer.cs" Line="1" Column="1" />
+      <File FileName="CrossPlatformLogic/Network/INetworkClient.cs" Line="13" Column="1" />
+      <File FileName="CrossPlatformLogic/Network/NetworkClient.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

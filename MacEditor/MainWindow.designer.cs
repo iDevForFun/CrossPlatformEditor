@@ -13,13 +13,13 @@ namespace MacEditor
 	partial class MainWindowController
 	{
 		[Outlet]
+		MonoMac.AppKit.NSTextField _MessageLabel { get; set; }
+
+		[Outlet]
 		MonoMac.AppKit.NSImageView ImageView { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField LabelField { get; set; }
-
-		[Outlet]
-		MonoMac.AppKit.NSTextFieldCell MessageLabel { get; set; }
+		MonoMac.AppKit.NSTextField MessageLabel { get; set; }
 
 		[Action ("Click_Button:")]
 		partial void Click_Button (MonoMac.Foundation.NSObject sender);
@@ -29,19 +29,19 @@ namespace MacEditor
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (LabelField != null) {
-				LabelField.Dispose ();
-				LabelField = null;
-			}
-
-			if (MessageLabel != null) {
-				MessageLabel.Dispose ();
-				MessageLabel = null;
+			if (_MessageLabel != null) {
+				_MessageLabel.Dispose ();
+				_MessageLabel = null;
 			}
 
 			if (ImageView != null) {
 				ImageView.Dispose ();
 				ImageView = null;
+			}
+
+			if (MessageLabel != null) {
+				MessageLabel.Dispose ();
+				MessageLabel = null;
 			}
 		}
 	}

@@ -7,11 +7,15 @@ using MonoMac.AppKit;
 using CrossPlatformLogic;
 using System.IO;
 using System.Drawing;
+using CrossPlatformLogic.Network;
 
 namespace MacEditor
 {
 	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
 	{
+		private  INetworkClient client;
+
+
 		#region Constructors
 
 		// Called when created from unmanaged code
@@ -37,6 +41,8 @@ namespace MacEditor
 		// Shared initialization code
 		void Initialize ()
 		{
+
+			client = new NetworkClient ();
 		}
 
 		#endregion
@@ -50,26 +56,33 @@ namespace MacEditor
 
 		partial void Click_Button(NSObject sender)
 		{
+			MessageLabel.StringValue = string.Empty;
 
-			//var filePath = LabelField.StringValue;
-			var filePath = "/Volumes/DATA/Photos/AAA_0727.jpg";
-			if(string.IsNullOrEmpty(filePath)) return;
+			var openPanel = new NSOpenPanel();
+			openPanel.ReleasedWhenClosed = true;
+			openPanel.Prompt = "Select file";
 
-			var loader = new ImageLoader();
-
-			try
+			var result = openPanel.RunModal();
+			if (result == 1)
 			{
-				var image = loader.LoadImage(filePath);
-				var nsImage = ConvertFromImage(image);
+				var filePath = openPanel.Url;
+				var loader = new ImageLoader();
 
-				ImageView.Image = nsImage;
+				try
+				{
+					var image = loader.LoadImage(filePath.FilePathUrl.Path) as Bitmap;
+					var nsImage = ConvertFromImage(image);
+
+					ImageView.Image = nsImage;
+
+				}
+				catch(Exception ex)
+				{
+					MessageLabel.StringValue = string.Format("Error: {0}", ex.Message);
+				}
 
 			}
-			catch(Exception ex)
-			{
-				MessageLabel.StringValue = string.Format("Error: {0}", ex.Message);
-			}
-				
+
 		}
 
 		partial void Click_Flip(NSObject sender)
@@ -78,33 +91,33 @@ namespace MacEditor
 			var bitmap = ConvertToImage(nsImg);
 			var loader = new ImageLoader ();
 
-			bitmap = loader.FlipHorizontal (bitmap);
+			bitmap = loader.FlipHorizontal ((Image)bitmap) as Bitmap;
 
 			ImageView.Image = ConvertFromImage (bitmap);
 
 
 		}
 
-		private NSImage ConvertFromImage(Image img)
+		private NSImage ConvertFromImage(Bitmap img)
 		{
 			using (var stream = new MemoryStream ()) {
 
-				img.Save (stream, System.Drawing.Imaging.ImageFormat.Png);
+				img.Save (stream, System.Drawing.Imaging.ImageFormat.Bmp);
 				stream.Position = 0;
 
-				var data = NSData.FromStream(stream);
+				var data = NSData.FromArray(stream.ToArray());
 				var nsImg = new NSImage (data);
 				return nsImg;
 			}
 		}
 
-		private Image ConvertToImage(NSImage img)
+		private Bitmap ConvertToImage(NSImage img)
 		{
 			var data = img.AsTiff();
 			var imgRep = NSBitmapImageRep.ImageRepFromData(data) as NSBitmapImageRep;
 			var imageProps = new NSDictionary();
 			var imgData = imgRep.RepresentationUsingTypeProperties(NSBitmapImageFileType.Png, imageProps);
-			return Image.FromStream(imgData.AsStream());
+			return Bitmap.FromStream(imgData.AsStream()) as Bitmap;
 
 		}
 
