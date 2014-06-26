@@ -13,7 +13,7 @@ namespace MacEditor
 {
 	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
 	{
-		private  INetworkClient client;
+		private INetworkClient client;
 
 
 		#region Constructors
@@ -41,7 +41,6 @@ namespace MacEditor
 		// Shared initialization code
 		void Initialize ()
 		{
-
 			client = new NetworkClient ();
 		}
 
@@ -74,6 +73,8 @@ namespace MacEditor
 					var nsImage = ConvertFromImage(image);
 
 					ImageView.Image = nsImage;
+					FlipBtn.Enabled = true;
+					ListenBtn.Enabled = true;
 
 				}
 				catch(Exception ex)
@@ -87,6 +88,26 @@ namespace MacEditor
 
 		partial void Click_Flip(NSObject sender)
 		{
+			Flip();
+		}
+
+		partial void Click_Listen(NSObject sender)
+		{
+			ListenBtn.Enabled = false;
+			FlipBtn.Enabled = false;
+			client.OnNetworkEvent().Subscribe (x => { 
+
+				if (x.Type == EventType.Flip){
+						this.InvokeOnMainThread(() => 
+						{
+							Flip();
+						});
+				}
+			});
+		}
+
+		private void Flip()
+		{
 			var nsImg = ImageView.Image;
 			var bitmap = ConvertToImage(nsImg);
 			var loader = new ImageLoader ();
@@ -94,7 +115,6 @@ namespace MacEditor
 			bitmap = loader.FlipHorizontal ((Image)bitmap) as Bitmap;
 
 			ImageView.Image = ConvertFromImage (bitmap);
-
 
 		}
 

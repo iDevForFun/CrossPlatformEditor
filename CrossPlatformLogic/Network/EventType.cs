@@ -3,6 +3,7 @@
     public enum EventType
     {
         Loaded,
-        Flip
+		Flip,
+		Stop
     }
 }
