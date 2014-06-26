@@ -1,0 +1,8 @@
+I:\Hackathon\CrossPlatformEditor\WindowsEditor\bin\Debug\WindowsEditor.exe.config
+I:\Hackathon\CrossPlatformEditor\WindowsEditor\bin\Debug\WindowsEditor.exe
+I:\Hackathon\CrossPlatformEditor\WindowsEditor\bin\Debug\WindowsEditor.pdb
+I:\Hackathon\CrossPlatformEditor\WindowsEditor\obj\Debug\WindowsEditor.csprojResolveAssemblyReference.cache
+I:\Hackathon\CrossPlatformEditor\WindowsEditor\obj\Debug\WindowsEditor.Properties.Resources.resources
+I:\Hackathon\CrossPlatformEditor\WindowsEditor\obj\Debug\WindowsEditor.csproj.GenerateResource.Cache
+I:\Hackathon\CrossPlatformEditor\WindowsEditor\obj\Debug\WindowsEditor.exe
+I:\Hackathon\CrossPlatformEditor\WindowsEditor\obj\Debug\WindowsEditor.pdb
