@@ -75,6 +75,7 @@ namespace MacEditor
 					ImageView.Image = nsImage;
 					FlipBtn.Enabled = true;
 					ListenBtn.Enabled = true;
+					client.ReportLoaded(filePath.FilePathUrl.Path);
 
 				}
 				catch(Exception ex)
@@ -94,7 +95,6 @@ namespace MacEditor
 		partial void Click_Listen(NSObject sender)
 		{
 			ListenBtn.Enabled = false;
-			FlipBtn.Enabled = false;
 			client.OnNetworkEvent().Subscribe (x => { 
 
 				if (x.Type == EventType.Flip){
@@ -115,6 +115,7 @@ namespace MacEditor
 			bitmap = loader.FlipHorizontal ((Image)bitmap) as Bitmap;
 
 			ImageView.Image = ConvertFromImage (bitmap);
+			client.ReportFlip ();
 
 		}
 

@@ -14,10 +14,8 @@ namespace MacEditor
 	{
 		[Outlet]
 		MonoMac.AppKit.NSTextField _MessageLabel { get; set; }
-
+	
 		[Outlet]
-		MonoMac.AppKit.NSImageView ImageView { get; set; }
-
 		MonoMac.AppKit.NSButton FlipBtn { get; set; }
 
 		[Outlet]

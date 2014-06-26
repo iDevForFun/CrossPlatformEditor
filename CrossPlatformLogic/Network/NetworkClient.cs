@@ -3,8 +3,8 @@ using System.Diagnostics;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using Microsoft.AspNet.SignalR.Client;
-using System.Reactive.Linq;
 using System.Threading;
+
 
 namespace CrossPlatformLogic.Network
 {
@@ -15,7 +15,7 @@ namespace CrossPlatformLogic.Network
 
         public NetworkClient()
         {
-            hubConnection = new HubConnection("http://localhost:58396/");
+			hubConnection = new HubConnection("http://10.211.55.5/CollaborationServer/");
             hubProxy = hubConnection.CreateHubProxy("CollaborationHub");
         }
 
@@ -32,10 +32,11 @@ namespace CrossPlatformLogic.Network
         {
             if (hubConnection.State == ConnectionState.Disconnected)
             {
-                await hubConnection.Start();
+				await hubConnection.Start();
             }
+
             hubProxy.Invoke("SendFlip");
-            Debug.WriteLine("Image fliped");
+			Debug.WriteLine("Image flipped");
         }
 
         public IObservable<NetworkEvent> OnNetworkEvent()
