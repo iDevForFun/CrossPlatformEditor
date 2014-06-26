@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Input;
 using CrossPlatformLogic;
+using CrossPlatformLogic.Network;
 using Microsoft.Win32;
 
 namespace WindowsEditor.Wpf.ViewModel
@@ -8,7 +9,8 @@ namespace WindowsEditor.Wpf.ViewModel
     public class MainViewModel : BaseViewModel
     {
         private ICommand buttonCommand;
-        private ImageLoader imageLoader;
+        private readonly ImageLoader imageLoader;
+        private readonly INetworkClient networkClient;
         private string tbText;
         private string title;
         private Image image;
@@ -18,6 +20,7 @@ namespace WindowsEditor.Wpf.ViewModel
         {
             Title = "Our nice windows editor";
             imageLoader = new ImageLoader();
+            networkClient = new NetworkClient();
             ButtonCommand = new RelayCommand(_ => SelectImage());
             FlipCommand=  new RelayCommand(_ => Flip(), _ => Image != null);
         }
@@ -26,7 +29,8 @@ namespace WindowsEditor.Wpf.ViewModel
         {
             if (FlipCommand.CanExecute(null))
             {
-                Image = imageLoader.FlipHorizontal(Image);    
+                Image = imageLoader.FlipHorizontal(Image);  
+                networkClient.ReportFlip();
             }
             
         }
@@ -77,12 +81,13 @@ namespace WindowsEditor.Wpf.ViewModel
             if (result != true) return;
 
 
-            string filename = dlg.FileName;
+            var filename = dlg.FileName;
             FilePath = filename;
             var img = imageLoader.LoadImage(filename);
             if (img != null)
             {
                 Image = img;
+                networkClient.ReportLoaded(filename);
             }
         }
 

@@ -99,6 +99,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\albelli.png" />
+  </ItemGroup>
   <Import Project="..\CrossPlatformLogic\CrossPlatformLogic.projitems" Label="Shared" Condition="Exists('..\CrossPlatformLogic\CrossPlatformLogic.projitems')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
