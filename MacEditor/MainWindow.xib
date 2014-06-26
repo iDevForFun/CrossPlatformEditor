@@ -7,8 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
                 <outlet property="ImageView" destination="Tx0-I1-HpZ" id="qf3-7H-aEV"/>
-                <outlet property="LabelField" destination="KjV-bm-QRS" id="Z5l-bK-4bm"/>
-                <outlet property="MessageLabel" destination="XZa-ZN-Qpf" id="XAq-Ng-kuO"/>
+                <outlet property="MessageLabel" destination="UaH-mR-EMN" id="0iH-28-jkV"/>
                 <outlet property="window" destination="2" id="6"/>
             </connections>
         </customObject>
@@ -23,22 +22,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="644" height="482"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" id="KjV-bm-QRS">
-                        <rect key="frame" x="20" y="433" width="174" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Image file path ..." drawsBackground="YES" id="LCU-nD-4fE">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <action selector="LabelField:" target="-2" id="4lQ-v9-7oR"/>
-                        </connections>
-                    </textField>
                     <button verticalHuggingPriority="750" id="acC-Bi-LAE">
-                        <rect key="frame" x="214" y="427" width="74" height="32"/>
+                        <rect key="frame" x="21" y="438" width="598" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wLD-zR-DEb">
+                        <buttonCell key="cell" type="push" title="Select File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wLD-zR-DEb">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <connections>
@@ -46,22 +33,13 @@
                             </connections>
                         </buttonCell>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="B6D-DU-XSs">
-                        <rect key="frame" x="317" y="433" width="258" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="XZa-ZN-Qpf">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Tx0-I1-HpZ">
-                        <rect key="frame" x="17" y="17" width="578" height="411"/>
+                        <rect key="frame" x="67" y="97" width="495" height="317"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="Cic-0x-X6z"/>
                     </imageView>
                     <button verticalHuggingPriority="750" id="NCQ-RP-ZDG">
-                        <rect key="frame" x="304" y="427" width="63" height="32"/>
+                        <rect key="frame" x="21" y="42" width="598" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Flip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="L0g-NI-QM9">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -71,6 +49,15 @@
                             <action selector="Click_Flip:" target="-2" id="qec-Pp-jV8"/>
                         </connections>
                     </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="UaH-mR-EMN">
+                        <rect key="frame" x="25" y="420" width="590" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="L6R-dd-JJJ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
         </window>
