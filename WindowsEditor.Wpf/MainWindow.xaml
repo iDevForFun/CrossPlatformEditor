@@ -12,6 +12,7 @@
             <TextBlock Text="{Binding FilePath}"/>
             <Button Content="select file" Command="{Binding ButtonCommand}"></Button>
             <Image Width="600" Height="600" Source="{Binding Image, Converter={StaticResource ImageToSourceConverter}}"/>
+            <Button Content="flip" Command="{Binding FlipCommand}"/>
         </StackPanel>
         </Grid>
     </Grid>

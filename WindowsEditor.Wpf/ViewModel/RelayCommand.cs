@@ -8,9 +8,9 @@ namespace WindowsEditor.Wpf.ViewModel
     [PublicAPI]
     public class RelayCommand : ICommand
     {
-        private readonly Action<object> _execute;
-        private readonly Action _executeViod;
-        private readonly Predicate<object> _canExecute;
+        private readonly Action<object> execute;
+        private readonly Action executeViod;
+        private readonly Predicate<object> canExecute;
 
 
         public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
@@ -18,8 +18,8 @@ namespace WindowsEditor.Wpf.ViewModel
             if (execute == null)
                 throw new ArgumentNullException("execute");
 
-            _execute = execute;
-            _canExecute = canExecute;
+            this.execute = execute;
+            this.canExecute = canExecute;
         }
 
         public RelayCommand(Action execute, Predicate<object> canExecute = null)
@@ -27,14 +27,14 @@ namespace WindowsEditor.Wpf.ViewModel
             if (execute == null)
                 throw new ArgumentNullException("execute");
 
-            _executeViod = execute;
-            _canExecute = canExecute;
+            executeViod = execute;
+            this.canExecute = canExecute;
         }
 
         [DebuggerStepThrough]
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null || _canExecute(parameter);
+            return canExecute == null || canExecute(parameter);
         }
 
         [PublicAPI]
@@ -50,14 +50,14 @@ namespace WindowsEditor.Wpf.ViewModel
 
         public void Execute(object parameter)
         {
-            if (_execute != null)
+            if (execute != null)
             {
-                _execute(parameter);
+                execute(parameter);
                 return;
             }
-            if (_executeViod != null)
+            if (executeViod != null)
             {
-                _executeViod();
+                executeViod();
             }
 
         }

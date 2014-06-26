@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Windows.Data;
@@ -15,7 +16,7 @@ namespace WindowsEditor.Wpf.Converters
             if (image != null)
             {
                 var ms = new MemoryStream();
-                image.Save(ms, image.RawFormat);
+                image.Save(ms, ImageFormat.Bmp);
                 ms.Seek(0, SeekOrigin.Begin);
                 var bi = new BitmapImage();
                 bi.BeginInit();

@@ -12,12 +12,23 @@ namespace WindowsEditor.Wpf.ViewModel
         private string tbText;
         private string title;
         private Image image;
+        private RelayCommand flipCommand;
 
         public MainViewModel()
         {
             Title = "Our nice windows editor";
             imageLoader = new ImageLoader();
-            ButtonCommand = new RelayCommand(_ => OnClick());
+            ButtonCommand = new RelayCommand(_ => SelectImage());
+            FlipCommand=  new RelayCommand(_ => Flip(), _ => Image != null);
+        }
+
+        private void Flip()
+        {
+            if (FlipCommand.CanExecute(null))
+            {
+                Image = imageLoader.FlipHorizontal(Image);    
+            }
+            
         }
 
 
@@ -54,7 +65,7 @@ namespace WindowsEditor.Wpf.ViewModel
             }
         }
 
-        private void OnClick()
+        private void SelectImage()
         {
             var dlg = new OpenFileDialog
             {
@@ -75,13 +86,25 @@ namespace WindowsEditor.Wpf.ViewModel
             }
         }
 
+        public RelayCommand FlipCommand
+        {
+            get { return flipCommand; }
+            set
+            {
+                if (Equals(value, flipCommand)) return;
+                flipCommand = value;
+                OnPropertyChanged();
+            }
+        }
+
         public Image Image
         {
             get { return image; }
             set
             {
-                if (Equals(value, image)) return;
+//                if (Equals(value, image)) return;
                 image = value;
+                FlipCommand.RaiseCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
