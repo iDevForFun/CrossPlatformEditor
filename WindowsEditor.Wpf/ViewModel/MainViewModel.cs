@@ -3,6 +3,8 @@ using System.Windows.Input;
 using CrossPlatformLogic;
 using CrossPlatformLogic.Network;
 using Microsoft.Win32;
+using System.Reactive.Linq;
+using System;
 
 namespace WindowsEditor.Wpf.ViewModel
 {
@@ -15,6 +17,7 @@ namespace WindowsEditor.Wpf.ViewModel
         private string title;
         private Image image;
         private RelayCommand flipCommand;
+        private RelayCommand listenCommand;
 
         public MainViewModel()
         {
@@ -23,6 +26,19 @@ namespace WindowsEditor.Wpf.ViewModel
             networkClient = new NetworkClient();
             ButtonCommand = new RelayCommand(_ => SelectImage());
             FlipCommand=  new RelayCommand(_ => Flip(), _ => Image != null);
+            ListenCommand = new RelayCommand(_ => Listen());
+        }
+
+        private void Listen()
+        {
+            networkClient.OnNetworkEvent()
+                .Subscribe(networEvent =>
+            {
+                if (networEvent.Type == EventType.Flip)
+                {
+                    Flip();
+                }
+            });
         }
 
         private void Flip()
@@ -54,6 +70,17 @@ namespace WindowsEditor.Wpf.ViewModel
             {
                 if (Equals(value, buttonCommand)) return;
                 buttonCommand = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public RelayCommand ListenCommand
+        {
+            get { return listenCommand; }
+            set
+            {
+                if (Equals(value, listenCommand)) return;
+                listenCommand = value;
                 OnPropertyChanged();
             }
         }
