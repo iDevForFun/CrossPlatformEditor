@@ -10,9 +10,6 @@
 
 
 @interface AppDelegate : NSObject {
-
 }
-
-
 
 @end

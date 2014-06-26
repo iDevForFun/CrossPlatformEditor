@@ -8,8 +8,10 @@
 #import "MainWindowController.h"
 
 @implementation MainWindowController
-//@synthesize LabelField;
+
+@synthesize LabelField = _LabelField;
 
 - (IBAction)Click_Button:(id)sender {
 }
+
 @end

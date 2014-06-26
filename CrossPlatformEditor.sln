@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio 2012
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacEditor", "MacEditor\MacEditor.csproj", "{AF0AA5BA-FBBC-47C2-986D-D3DEFE85081D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsEditor", "WindowsEditor\WindowsEditor.csproj", "{C2C6F7C8-0590-4A28-8707-4962CCB68790}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLogic", "SharedLogic\SharedLogic.csproj", "{B37CD692-2790-4BCB-9B16-F6212641AF9D}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CrossPlatformLogic", "CrossPlatformLogic\CrossPlatformLogic.shproj", "{6D4A7C23-FB72-4585-A58D-CBD6B3850AD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsEditor.Wpf", "WindowsEditor.Wpf\WindowsEditor.Wpf.csproj", "{B474AC4D-00F9-446C-897F-21F4189BA760}"
 EndProject
@@ -30,23 +30,11 @@ Global
 		{C2C6F7C8-0590-4A28-8707-4962CCB68790}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2C6F7C8-0590-4A28-8707-4962CCB68790}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2C6F7C8-0590-4A28-8707-4962CCB68790}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B37CD692-2790-4BCB-9B16-F6212641AF9D}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
-		{B37CD692-2790-4BCB-9B16-F6212641AF9D}.AppStore|Any CPU.Build.0 = Release|Any CPU
-		{B37CD692-2790-4BCB-9B16-F6212641AF9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B37CD692-2790-4BCB-9B16-F6212641AF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B37CD692-2790-4BCB-9B16-F6212641AF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B37CD692-2790-4BCB-9B16-F6212641AF9D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B474AC4D-00F9-446C-897F-21F4189BA760}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
-		{B474AC4D-00F9-446C-897F-21F4189BA760}.AppStore|Any CPU.Build.0 = Release|Any CPU
-		{B474AC4D-00F9-446C-897F-21F4189BA760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B474AC4D-00F9-446C-897F-21F4189BA760}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B474AC4D-00F9-446C-897F-21F4189BA760}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B474AC4D-00F9-446C-897F-21F4189BA760}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = MacEditor\MacEditor.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

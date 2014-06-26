@@ -10,9 +10,11 @@
 
 
 @interface MainWindowController : NSWindowController {
-    IBOutlet NSTextField *LabelField;
+	NSTextField *_LabelField;
 }
-//@property (assign) IBOutlet NSTextField *LabelField;
+
+@property (nonatomic, retain) IBOutlet NSTextField *LabelField;
+
 - (IBAction)Click_Button:(id)sender;
 
 @end

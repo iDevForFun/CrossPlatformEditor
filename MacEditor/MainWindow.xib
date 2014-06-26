@@ -39,10 +39,10 @@
                         <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wLD-zR-DEb">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="Click_Button:" target="-2" id="Lqa-sv-6on"/>
+                            </connections>
                         </buttonCell>
-                        <connections>
-                            <action selector="Click_BUtton:" target="-2" id="oDm-We-GTS"/>
-                        </connections>
                     </button>
                 </subviews>
             </view>

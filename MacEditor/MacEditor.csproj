@@ -87,5 +87,6 @@
   <ItemGroup>
     <None Include="Info.plist" />
   </ItemGroup>
+  <Import Project="..\CrossPlatformLogic\CrossPlatformLogic.projitems" Label="Shared" Condition="Exists('..\CrossPlatformLogic\CrossPlatformLogic.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -47,9 +47,10 @@ namespace MacEditor
 			}
 		}
 
-		partial void Click_Button(NSObject sender){
-
+		partial void Click_Button(NSObject sender)
+		{
 			LabelField.StringValue = string.Format("ButtonClicked {0} times", count++);
+
 		}
 
 	}
