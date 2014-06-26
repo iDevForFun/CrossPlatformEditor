@@ -27,7 +27,9 @@ namespace WindowsEditor.Wpf.ViewModel
             ButtonCommand = new RelayCommand(_ => SelectImage());
             FlipCommand=  new RelayCommand(_ => Flip(true), _ => Image != null);
             ListenCommand = new RelayCommand(_ => Listen());
+
         }
+
 
         private void Listen()
         {

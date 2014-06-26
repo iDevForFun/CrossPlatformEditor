@@ -13,12 +13,11 @@ namespace MacEditor
 	partial class MainWindowController
 	{
 		[Outlet]
-<<<<<<< HEAD
 		MonoMac.AppKit.NSTextField _MessageLabel { get; set; }
 
 		[Outlet]
 		MonoMac.AppKit.NSImageView ImageView { get; set; }
-=======
+
 		MonoMac.AppKit.NSButton FlipBtn { get; set; }
 
 		[Outlet]
@@ -26,7 +25,7 @@ namespace MacEditor
 
 		[Outlet]
 		MonoMac.AppKit.NSButton ListenBtn { get; set; }
->>>>>>> master
+
 
 		[Outlet]
 		MonoMac.AppKit.NSTextField MessageLabel { get; set; }

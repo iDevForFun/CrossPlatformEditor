@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacEditor", "MacEditor\MacEditor.csproj", "{AF0AA5BA-FBBC-47C2-986D-D3DEFE85081D}"
@@ -42,14 +42,10 @@ Global
 		{3A9A2012-1075-4922-873B-A3C0019C73F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A9A2012-1075-4922-873B-A3C0019C73F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = MacEditor\MacEditor.csproj
-	EndGlobalSection
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		CrossPlatformLogic\CrossPlatformLogic.projitems*{b474ac4d-00f9-446c-897f-21f4189ba760}*SharedItemsImports = 4
-		CrossPlatformLogic\CrossPlatformLogic.projitems*{6d4a7c23-fb72-4585-a58d-cbd6b3850ad4}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MacEditor\MacEditor.csproj
 	EndGlobalSection
 EndGlobal

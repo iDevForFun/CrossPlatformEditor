@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using Microsoft.AspNet.SignalR.Client;
+using System.Reactive.Linq;
+using System.Threading;
 
 namespace CrossPlatformLogic.Network
 {
@@ -37,6 +39,7 @@ namespace CrossPlatformLogic.Network
         }
 
         public IObservable<NetworkEvent> OnNetworkEvent()
+
         {
             return  Observable.Create<NetworkEvent>(observer => 
                 Scheduler.Default.Schedule(() =>
@@ -46,7 +49,6 @@ namespace CrossPlatformLogic.Network
                     observer.OnNext(networkEvent);
                 });
             }));
-
         }
     }
 }
