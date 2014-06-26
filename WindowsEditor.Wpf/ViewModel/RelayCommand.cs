@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Windows;
 using System.Windows.Input;
 using WindowsEditor.Wpf.Annotations;
 
@@ -42,7 +43,7 @@ namespace WindowsEditor.Wpf.ViewModel
         {
             if (CanExecuteChanged != null)
             {
-                CanExecuteChanged(this, new EventArgs());
+                Application.Current.Dispatcher.InvokeAsync(() => CanExecuteChanged(this, new EventArgs()));
             }
         }
 

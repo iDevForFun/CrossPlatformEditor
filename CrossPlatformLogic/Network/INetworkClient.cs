@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Reactive;
 
 namespace CrossPlatformLogic.Network
 {
@@ -8,5 +7,6 @@ namespace CrossPlatformLogic.Network
     {
         void ReportLoaded(string imagePath);
         void ReportFlip();
+       IObservable<NetworkEvent> OnNetworkEvent();
     }
 }

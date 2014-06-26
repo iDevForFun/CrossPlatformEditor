@@ -10,7 +10,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ImageLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Network\EventType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Network\INetworkClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Network\NetworkClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Network\NetworkEvent.cs" />
   </ItemGroup>
 </Project>
