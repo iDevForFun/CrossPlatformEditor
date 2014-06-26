@@ -3,3 +3,8 @@ I:\Hackathon\CrossPlatformEditor\SharedLogic\bin\Debug\SharedLogic.pdb
 I:\Hackathon\CrossPlatformEditor\SharedLogic\obj\Debug\SharedLogic.csprojResolveAssemblyReference.cache
 I:\Hackathon\CrossPlatformEditor\SharedLogic\obj\Debug\SharedLogic.dll
 I:\Hackathon\CrossPlatformEditor\SharedLogic\obj\Debug\SharedLogic.pdb
+C:\code\CrossPlatformEditor\SharedLogic\bin\Debug\SharedLogic.dll
+C:\code\CrossPlatformEditor\SharedLogic\bin\Debug\SharedLogic.pdb
+C:\code\CrossPlatformEditor\SharedLogic\obj\Debug\SharedLogic.csprojResolveAssemblyReference.cache
+C:\code\CrossPlatformEditor\SharedLogic\obj\Debug\SharedLogic.dll
+C:\code\CrossPlatformEditor\SharedLogic\obj\Debug\SharedLogic.pdb
