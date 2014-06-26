@@ -16,7 +16,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Image Source="Assets/albelli.png" Width="130" HorizontalAlignment="Left"/>
-        <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="600">
+        <Grid Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left" Width="600">
             
         <StackPanel>
             <TextBlock Text="{Binding FilePath}"/>
