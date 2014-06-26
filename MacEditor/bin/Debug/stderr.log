@@ -1,3 +1,2 @@
-2014-06-26 11:33:51.258 MacEditor[2240:e07] Could not connect the action OpenFile: to target of class AppDelegate
-2014-06-26 11:33:51.431 MacEditor[2240:e07] Could not connect the action LabelField: to target of class MainWindowController
-2014-06-26 11:33:51.432 MacEditor[2240:e07] Could not connect the action Click_BUtton: to target of class MainWindowController
+2014-06-26 11:52:12.039 MacEditor[2650:e07] Could not connect the action OpenFile: to target of class AppDelegate
+2014-06-26 11:52:12.176 MacEditor[2650:e07] Could not connect the action LabelField: to target of class MainWindowController
