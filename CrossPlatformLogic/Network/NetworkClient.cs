@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
-using System.Threading;
 using Microsoft.AspNet.SignalR.Client;
 
 namespace CrossPlatformLogic.Network
@@ -47,6 +46,7 @@ namespace CrossPlatformLogic.Network
                     observer.OnNext(networkEvent);
                 });
             }));
+
         }
     }
 }
