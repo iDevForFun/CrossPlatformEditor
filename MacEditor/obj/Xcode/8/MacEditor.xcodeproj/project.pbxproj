@@ -1,0 +1,226 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3062CA790000000000000000 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F3D7170000000000000000 /* Cocoa.framework */; };
+		302FE75D0000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C0F3FB0000000000000000 /* Foundation.framework */; };
+		323052E00000000000000000 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C15F7E0000000000000000 /* MainWindow.xib */; };
+		1216E1520000000000000000 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15A7EDF00000000000000000 /* MainMenu.xib */; };
+		358E7C620000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 391F89000000000000000000 /* Info.plist */; };
+		301B77E70000000000000000 /* MainWindow.h in Sources */ = {isa = PBXBuildFile; fileRef = 33AC84850000000000000000 /* MainWindow.h */; };
+		36CE8A200000000000000000 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDF54000000000000000000 /* MainWindow.m */; };
+		1C315DD80000000000000000 /* MainWindowController.h in Sources */ = {isa = PBXBuildFile; fileRef = 1FC26A760000000000000000 /* MainWindowController.h */; };
+		1F8F875A0000000000000000 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232093F80000000000000000 /* MainWindowController.m */; };
+		3131E3540000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 34C2EFF20000000000000000 /* AppDelegate.h */; };
+		210BB8FF0000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 249CC59D0000000000000000 /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		376CE7D40000000000000000 /* MacEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "MacEditor.app"; path = "MacEditor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33F3D7170000000000000000 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Cocoa.framework"; path = "System/Library/Frameworks/Cocoa.framework"; sourceTree = SDKROOT; };
+		33C0F3FB0000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		35C15F7E0000000000000000 /* MainWindow.xib */ = {isa = PBXFileReference; name = "MainWindow.xib"; path = "MainWindow.xib"; sourceTree = "<group>"; };
+		15A7EDF00000000000000000 /* MainMenu.xib */ = {isa = PBXFileReference; name = "MainMenu.xib"; path = "MainMenu.xib"; sourceTree = "<group>"; };
+		391F89000000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		33AC84850000000000000000 /* MainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MainWindow.h"; path = "MainWindow.h"; sourceTree = "<group>"; };
+		6FDF54000000000000000000 /* MainWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MainWindow.m"; path = "MainWindow.m"; sourceTree = "<group>"; };
+		1FC26A760000000000000000 /* MainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MainWindowController.h"; path = "MainWindowController.h"; sourceTree = "<group>"; };
+		232093F80000000000000000 /* MainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MainWindowController.m"; path = "MainWindowController.m"; sourceTree = "<group>"; };
+		34C2EFF20000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		249CC59D0000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5E3FD6800000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3062CA790000000000000000 /* Cocoa.framework in Frameworks */,
+				302FE75D0000000000000000 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25FD6EF60000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				109723420000000000000000 /* MacEditor */,
+				30B094D00000000000000000 /* Frameworks */,
+				1B4A491C0000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B4A491C0000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				376CE7D40000000000000000 /* MacEditor.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		30B094D00000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33C0F3FB0000000000000000 /* Foundation.framework */,
+				33F3D7170000000000000000 /* Cocoa.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		109723420000000000000000 /* MacEditor */ = {
+			isa = PBXGroup;
+			children = (
+				34C2EFF20000000000000000 /* AppDelegate.h */,
+				391F89000000000000000000 /* Info.plist */,
+				15A7EDF00000000000000000 /* MainMenu.xib */,
+				33AC84850000000000000000 /* MainWindow.h */,
+				35C15F7E0000000000000000 /* MainWindow.xib */,
+				1FC26A760000000000000000 /* MainWindowController.h */,
+				100206590000000000000000 /* Supporting Files */,
+			);
+			name = "MacEditor";
+			sourceTree = "<group>";
+		};
+		100206590000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				249CC59D0000000000000000 /* AppDelegate.m */,
+				6FDF54000000000000000000 /* MainWindow.m */,
+				232093F80000000000000000 /* MainWindowController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FB225440000000000000000 /* MacEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CB9C1FA0000000000000000 /* Build configuration list for PBXNativeTarget "MacEditor" */;
+			buildPhases = (
+				340EBE520000000000000000 /* Sources */,
+				5E3FD6800000000000000000 /* Frameworks */,
+				1CF95DDD0000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MacEditor";
+			productName = "MacEditor";
+			productReference = 376CE7D40000000000000000 /* MacEditor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24FEFF6A0000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 22069C200000000000000000 /* Build configuration list for PBXProject "MacEditor" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 25FD6EF60000000000000000;
+			productRefGroup = 1B4A491C0000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FB225440000000000000000 /* MacEditor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CF95DDD0000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				323052E00000000000000000 /* MainWindow.xib in Resources */,
+				1216E1520000000000000000 /* MainMenu.xib in Resources */,
+				358E7C620000000000000000 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		340EBE520000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				301B77E70000000000000000 /* MainWindow.h in Sources */,
+				36CE8A200000000000000000 /* MainWindow.m in Sources */,
+				1C315DD80000000000000000 /* MainWindowController.h in Sources */,
+				1F8F875A0000000000000000 /* MainWindowController.m in Sources */,
+				3131E3540000000000000000 /* AppDelegate.h in Sources */,
+				210BB8FF0000000000000000 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2382CDC50000000000000000 /* MonoMac */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = macosx;
+			};
+			name = MonoMac;
+		};
+		175376460000000000000000 /* MonoMac */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "MacEditor";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoMac;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22069C200000000000000000 /* Build configuration list for PBXProject "MacEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2382CDC50000000000000000 /* MonoMac */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoMac;
+		};
+		2CB9C1FA0000000000000000 /* Build configuration list for PBXNativeTarget "MacEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				175376460000000000000000 /* MonoMac */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoMac;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24FEFF6A0000000000000000 /* Project object */;
+}

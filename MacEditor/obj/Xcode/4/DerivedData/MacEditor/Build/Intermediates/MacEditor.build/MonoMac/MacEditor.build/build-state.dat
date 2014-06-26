@@ -1,0 +1,221 @@
+TMacEditor
+v6
+r1
+cCheck dependencies
+cCompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindow-8C3673E9046732E8.o /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindowController-ECDDF8A4FB6386E3.o /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/AppDelegate-757C55F849C92DE8.o /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/MacEditor.app/Contents/MacOS/MacEditor normal i386
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c0000000053481B7C00000000000000AA
+t1397234556
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c0000000052684CFF000000000000044C
+t1382567167
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000531F465600000000000001DE
+t1394558550
+s478
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+c0000000052684D00000000000000253C
+t1382567168
+s9532
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000531F465600000000000C9E38
+t1394558550
+s826936
+
+N/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.m
+c0000000053ABEC560000000000000144
+t1403776086
+s324
+
+N/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/AppDelegate-757C55F849C92DE8.o
+t1403780745
+s2952
+
+N/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MacEditor.LinkFileList
+c0000000053ABFE8800000000000002A8
+t1403780744
+s680
+
+N/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindow-8C3673E9046732E8.o
+t1403780745
+s14288
+
+N/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindowController-ECDDF8A4FB6386E3.o
+t1403780745
+s24120
+
+N/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/MacEditor.app/Contents/MacOS/MacEditor
+t2
+s0
+
+N/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.m
+c0000000053ABF27A0000000000000142
+t1403777658
+s322
+
+N/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.m
+c0000000053ABFE8800000000000001D0
+t1403780744
+s464
+
+CBuild AST from /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.m
+r0
+
+CBuild AST from /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.m
+r0
+
+CBuild AST from /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.m
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies09a4cc08365cb941^535be208365cb941^-563"warning: no rule to process file '/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.h' of type sourcecode.c.h for architecture i386warning: no rule to process file '/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.h' of type sourcecode.c.h for architecture i386warning: no rule to process file '/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.h' of type sourcecode.c.h for architecture i3863(21%IDEActivityLogMessage2@183"Warning: no rule to process file '/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.h' of type sourcecode.c.h for architecture i386-425473544#18446744073709551615#0#-1#27"com.apple.dt.IDE.LogMessage-27"Dependency Analysis Warning--2@193"Warning: no rule to process file '/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.h' of type sourcecode.c.h for architecture i386-425473544#18446744073709551615#0#-1#27"com.apple.dt.IDE.LogMessage-27"Dependency Analysis Warning--2@184"Warning: no rule to process file '/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.h' of type sourcecode.c.h for architecture i386-425473544#18446744073709551615#0#-1#27"com.apple.dt.IDE.LogMessage-27"Dependency Analysis Warning--0#1#1#--18"Check dependencies36"9D5594B9-AA27-4324-88B6-B6950F51F3D9-
+
+CCompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/AppDelegate-757C55F849C92DE8.o /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s425473544.829565
+e425473545.735663
+r1
+xCompileC
+xDerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/AppDelegate-757C55F849C92DE8.o
+x/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.m
+d/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.m223"CompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/AppDelegate-757C55F849C92DE8.o AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler27a1d408365cb941^ac54bc09365cb941^---0#0#1#-19%DVTDocumentLocation2@111"file:///Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.m0000000000000000^3894"CompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/AppDelegate-757C55F849C92DE8.o AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-generated-files.hmap -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-own-target-headers.hmap -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-all-target-headers.hmap -iquote /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-project-headers.hmap -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/DerivedSources/i386 -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/DerivedSources -F/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac -MMD -MT dependencies -MF /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/AppDelegate-757C55F849C92DE8.d --serialize-diagnostics /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/AppDelegate-757C55F849C92DE8.dia -c /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/AppDelegate.m -o /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/AppDelegate-757C55F849C92DE8.o36"22B42FAD-A95C-419E-AFAA-7933E8252525-
+b11FF3F36-AA87-43D0-AB7C-D9519B5DC610
+
+CCompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindow-8C3673E9046732E8.o /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s425473544.829077
+e425473545.737371
+r1
+xCompileC
+xDerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindow-8C3673E9046732E8.o
+x/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.m
+d/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection111"Compile /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.m221"CompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindow-8C3673E9046732E8.o MainWindow.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler7ba1d408365cb941^00c5bc09365cb941^---0#0#1#-19%DVTDocumentLocation2@110"file:///Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.m0000000000000000^3888"CompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindow-8C3673E9046732E8.o MainWindow.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-generated-files.hmap -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-own-target-headers.hmap -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-all-target-headers.hmap -iquote /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-project-headers.hmap -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/DerivedSources/i386 -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/DerivedSources -F/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac -MMD -MT dependencies -MF /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindow-8C3673E9046732E8.d --serialize-diagnostics /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindow-8C3673E9046732E8.dia -c /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.m -o /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindow-8C3673E9046732E8.o36"9ABF89C7-D08D-4DF7-8B20-81F3653B4092-
+b11FF3F36-AA87-43D0-AB7C-D9519B5DC610
+
+CCompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindowController-ECDDF8A4FB6386E3.o /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s425473544.829311
+e425473545.789943
+r1
+xCompileC
+xDerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindowController-ECDDF8A4FB6386E3.o
+x/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.m
+d/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection121"Compile /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.m241"CompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindowController-ECDDF8A4FB6386E3.o MainWindowController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilera9a2d408365cb941^9f3aca09365cb941^---0#0#1#-19%DVTDocumentLocation2@120"file:///Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.m0000000000000000^3948"CompileC DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindowController-ECDDF8A4FB6386E3.o MainWindowController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-generated-files.hmap -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-own-target-headers.hmap -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-all-target-headers.hmap -iquote /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/MacEditor-project-headers.hmap -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/DerivedSources/i386 -I/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/DerivedSources -F/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac -MMD -MT dependencies -MF /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindowController-ECDDF8A4FB6386E3.d --serialize-diagnostics /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindowController-ECDDF8A4FB6386E3.dia -c /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindowController.m -o /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindowController-ECDDF8A4FB6386E3.o36"C64CCBD6-9433-4775-9C80-3A7CF1CF37CE-
+b11FF3F36-AA87-43D0-AB7C-D9519B5DC610
+
+CCompileXIB /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainMenu.xib
+r0
+
+CCompileXIB /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/MainWindow.xib
+r0
+
+CCopyPlistFile /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/MacEditor.app/Contents/Resources/Info.plist Info.plist
+r0
+
+CLd /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/MacEditor.app/Contents/MacOS/MacEditor normal i386
+s425473545.792875
+e425473545.965054
+r0
+xLd
+x/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/MacEditor.app/Contents/MacOS/MacEditor
+xnormal
+xi386
+d/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MacEditor.LinkFileList
+d/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindow-8C3673E9046732E8.o
+d/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MainWindowController-ECDDF8A4FB6386E3.o
+d/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/AppDelegate-757C55F849C92DE8.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.eprintf.a
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+oUndefined symbols for architecture i386:
+o  "_main", referenced from:
+o     implicit entry/start for main executable
+old: symbol(s) not found for architecture i386
+oclang: error: linker command failed with exit code 1 (use -v to see invocation)
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection179"Link /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/MacEditor.app/Contents/MacOS/MacEditor98"Ld DerivedData/MacEditor/Build/Products/MonoMac/MacEditor.app/Contents/MacOS/MacEditor normal i386200dcb09365cb941^410df709365cb941^-241"Undefined symbols for architecture i386:  "_main", referenced from:     implicit entry/start for main executableld: symbol(s) not found for architecture i386clang: error: linker command failed with exit code 1 (use -v to see invocation)4(21%IDEActivityLogMessage2@25""_main", referenced from:-425473545#41#28#-2#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@40"Implicit entry/start for main executable-425473545#69#46#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@41"Symbol(s) not found for architecture i386-425473545#115#46#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@65"Linker command failed with exit code 1 (use -v to see invocation)-425473545#161#80#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--0#0#1#--1478"Ld DerivedData/MacEditor/Build/Products/MonoMac/MacEditor.app/Contents/MacOS/MacEditor normal i386    cd /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4    export MACOSX_DEPLOYMENT_TARGET=10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac -F/Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac -filelist /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MacEditor.LinkFileList -mmacosx-version-min=10.9 -fobjc-link-runtime -framework Cocoa -framework Foundation -Xlinker -dependency_info -Xlinker /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Intermediates/MacEditor.build/MonoMac/MacEditor.build/Objects-normal/i386/MacEditor_dependency_info.dat -o /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/MacEditor.app/Contents/MacOS/MacEditor36"1E23E005-504A-4A89-B104-E2A41CB62D9D-
+b11FF3F36-AA87-43D0-AB7C-D9519B5DC610
+
+CTouch /Volumes/DATA/Development/Albumprinter/Hackathon/CrossPlatformEditor/MacEditor/obj/Xcode/4/DerivedData/MacEditor/Build/Products/MonoMac/MacEditor.app
+r0
+

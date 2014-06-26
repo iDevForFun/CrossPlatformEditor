@@ -10,10 +10,13 @@
 
 
 @interface MainWindowController : NSWindowController {
-	NSTextField *_LabelField;
+	IBOutlet NSTextField *_LabelField;
+    IBOutlet NSTextFieldCell *MessageLabel;
+    IBOutlet NSImageCell *_ImageViewer;
 }
 
 @property (nonatomic, retain) IBOutlet NSTextField *LabelField;
+@property (nonatomic, retain) IBOutlet NSImageCell *ImageViewer;
 
 - (IBAction)Click_Button:(id)sender;
 

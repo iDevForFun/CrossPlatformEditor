@@ -9,6 +9,7 @@
 
 @implementation MainWindowController
 
+@synthesize ImageViewer = _ImageViewer;
 @synthesize LabelField = _LabelField;
 
 - (IBAction)Click_Button:(id)sender {
