@@ -8,6 +8,7 @@ using CrossPlatformLogic;
 using System.IO;
 using System.Drawing;
 using CrossPlatformLogic.Network;
+using Microsoft.AspNet.SignalR;
 
 namespace MacEditor
 {
@@ -41,7 +42,7 @@ namespace MacEditor
 		// Shared initialization code
 		void Initialize ()
 		{
-			client = new NetworkClient ();
+			InitSignalR ();
 		}
 
 		#endregion
@@ -104,6 +105,19 @@ namespace MacEditor
 						});
 				}
 			});
+		}
+
+		private void InitSignalR()
+		{
+			client = new NetworkClient ();
+			var signalRClient = new Microsoft.AspNet.SignalR.Client.HubConnection ("http://10.255.55.5/");
+
+			signalRClient.Received += (string msg) => 
+			{
+				InvokeOnMainThread (() => Flip ());
+			};
+
+			signalRClient.Start ();
 		}
 
 		private void Flip()
