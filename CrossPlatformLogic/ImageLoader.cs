@@ -9,7 +9,7 @@ namespace CrossPlatformLogic
         public Image LoadImage(string filePath)
         {
             if(!File.Exists(filePath)) throw new FileNotFoundException("No file found at this path", filePath);
-			if (!filePath.EndsWith(".jpg") && !filePath.EndsWith(".jpeg") && !filePath.EndsWith(".png")) throw new NotSupportedException("png of jpeg files only");
+            if (!filePath.EndsWith(".jpg") && !filePath.EndsWith(".jpeg") && !filePath.EndsWith(".png")) throw new NotSupportedException("png of jpeg files only");
 
             var image = new Bitmap(filePath);
             return image;
