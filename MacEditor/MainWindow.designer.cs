@@ -13,17 +13,13 @@ namespace MacEditor
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSTextField _MessageLabel { get; set; }
-	
-		[Outlet]
 		MonoMac.AppKit.NSButton FlipBtn { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSImageView ImageView { get; set; }
+		MonoMac.AppKit.NSComboBox ImageDropDown { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton ListenBtn { get; set; }
-
+		MonoMac.AppKit.NSImageView ImageView { get; set; }
 
 		[Outlet]
 		MonoMac.AppKit.NSTextField MessageLabel { get; set; }
@@ -39,21 +35,19 @@ namespace MacEditor
 		
 		void ReleaseDesignerOutlets ()
 		{
-
 			if (FlipBtn != null) {
 				FlipBtn.Dispose ();
 				FlipBtn = null;
 			}
 
+			if (ImageDropDown != null) {
+				ImageDropDown.Dispose ();
+				ImageDropDown = null;
+			}
+
 			if (ImageView != null) {
 				ImageView.Dispose ();
 				ImageView = null;
-			}
-
-
-			if (ListenBtn != null) {
-				ListenBtn.Dispose ();
-				ListenBtn = null;
 			}
 
 			if (MessageLabel != null) {

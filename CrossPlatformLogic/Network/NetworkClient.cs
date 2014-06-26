@@ -19,23 +19,25 @@ namespace CrossPlatformLogic.Network
             hubProxy = hubConnection.CreateHubProxy("CollaborationHub");
         }
 
-        public async void ReportLoaded(string imagePath)
+        public async void ReportLoaded(string fileName, int clientId)
         {
             if (hubConnection.State == ConnectionState.Disconnected)
             {
                 await hubConnection.Start();
             }
-            Debug.WriteLine(string.Format("Image loaded: {0}", imagePath));
+
+            hubProxy.Invoke<string>("LoadImage", fileName, clientId);
+            Debug.WriteLine(string.Format("Image loaded: {0}", fileName));
         }
 
-        public async void ReportFlip()
+        public async void ReportFlip(int clientId)
         {
             if (hubConnection.State == ConnectionState.Disconnected)
             {
 				await hubConnection.Start();
             }
 
-            hubProxy.Invoke("SendFlip");
+			hubProxy.Invoke("SendFlip", clientId);
 			Debug.WriteLine("Image flipped");
         }
 
@@ -46,6 +48,11 @@ namespace CrossPlatformLogic.Network
                 Scheduler.Default.Schedule(() =>
             {
                 hubProxy.On<NetworkEvent>("broadcastFlip", networkEvent =>
+                {
+                    observer.OnNext(networkEvent);
+                });
+
+                hubProxy.On<NetworkEvent>("broadcastLoad", networkEvent =>
                 {
                     observer.OnNext(networkEvent);
                 });

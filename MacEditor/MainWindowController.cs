@@ -14,7 +14,7 @@ namespace MacEditor
 	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
 	{
 		private INetworkClient client;
-
+		private const int ClientID = 2;
 
 		#region Constructors
 
@@ -53,60 +53,75 @@ namespace MacEditor
 			}
 		}
 
-		partial void Click_Button(NSObject sender)
+		public override void WindowDidLoad()
 		{
-			MessageLabel.StringValue = string.Empty;
-
-			var openPanel = new NSOpenPanel();
-			openPanel.ReleasedWhenClosed = true;
-			openPanel.Prompt = "Select file";
-
-			var result = openPanel.RunModal();
-			if (result == 1)
-			{
-				var filePath = openPanel.Url;
-				var loader = new ImageLoader();
-
-				try
-				{
-					var image = loader.LoadImage(filePath.FilePathUrl.Path) as Bitmap;
-					var nsImage = ConvertFromImage(image);
-
-					ImageView.Image = nsImage;
-					FlipBtn.Enabled = true;
-					ListenBtn.Enabled = true;
-					client.ReportLoaded(filePath.FilePathUrl.Path);
-
-				}
-				catch(Exception ex)
-				{
-					MessageLabel.StringValue = string.Format("Error: {0}", ex.Message);
-				}
-
+			base.WindowDidLoad ();
+			var images = new ImageLoader ().Images;
+					
+			foreach (var item in images.Select (x => new NSString (x))) {
+				ImageDropDown.Add (item);
 			}
 
+			if(images.Any()) ImageDropDown.Select (new NSString(images.First()));
+
+			FlipBtn.Enabled = false;
+
+			client.OnNetworkEvent().Subscribe (x => { 
+
+				if (x.ClientId != ClientID && x.Type == EventType.Flip){
+					this.InvokeOnMainThread(() => 
+						{
+							Flip(false);
+						});
+				}
+			});
+
+			client.OnNetworkEvent ().Subscribe (x => {
+				if (x.ClientId != ClientID && x.Type == EventType.Loaded){
+					this.InvokeOnMainThread(() => 
+						{
+							LoadImage(x.Data, false);
+						});
+				}
+			});
+
+		}
+
+		partial void Click_Button(NSObject sender)
+		{
+			var fileName = ImageDropDown.StringValue.ToString();
+			LoadImage(fileName, true);
 		}
 
 		partial void Click_Flip(NSObject sender)
 		{
-			Flip();
+			Flip(true);
 		}
 
-		partial void Click_Listen(NSObject sender)
+		private void LoadImage(string fileName, bool report)
 		{
-			ListenBtn.Enabled = false;
-			client.OnNetworkEvent().Subscribe (x => { 
 
-				if (x.Type == EventType.Flip){
-						this.InvokeOnMainThread(() => 
-						{
-							Flip();
-						});
-				}
-			});
+			MessageLabel.StringValue = string.Empty;
+			var loader = new ImageLoader();
+
+			try
+			{
+				var image = loader.LoadImage(fileName) as Bitmap;
+				var nsImage = ConvertFromImage(image);
+
+				ImageView.Image = nsImage;
+				FlipBtn.Enabled = true;
+			
+				if(report) client.ReportLoaded(fileName, ClientID);
+
+			}
+			catch(Exception ex)
+			{
+				MessageLabel.StringValue = string.Format("Error: {0}", ex.Message);
+			}
 		}
 
-		private void Flip()
+		private void Flip(bool report)
 		{
 			var nsImg = ImageView.Image;
 			var bitmap = ConvertToImage(nsImg);
@@ -115,7 +130,7 @@ namespace MacEditor
 			bitmap = loader.FlipHorizontal ((Image)bitmap) as Bitmap;
 
 			ImageView.Image = ConvertFromImage (bitmap);
-			client.ReportFlip ();
+			if(report) client.ReportFlip (ClientID);
 
 		}
 
