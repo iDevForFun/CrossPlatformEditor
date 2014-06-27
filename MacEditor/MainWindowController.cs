@@ -41,7 +41,7 @@ namespace MacEditor
 		// Shared initialization code
 		void Initialize ()
 		{
-			InitSignalR ();
+			client = new NetworkClient ();
 		}
 
 		#endregion
