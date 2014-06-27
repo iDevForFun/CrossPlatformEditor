@@ -32,12 +32,12 @@ namespace CollaborationServer
 			});
 		}
 
-        public void SendLock()
+		public void SendLock(bool editing)
         {
             Clients.Others.broadcastLoad(new NetworkEvent
             {
                 Message = "lock",
-                Data = string.Empty,
+					Data = editing.ToString(),
                 Type = EventType.Lock
             });
         }

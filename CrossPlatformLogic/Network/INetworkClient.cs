@@ -10,6 +10,6 @@ namespace CrossPlatformLogic.Network
         void ReportFlip();
 		void ReportRotate();
         IObservable<NetworkEvent> OnNetworkEvent();
-        void ReportLock();
+		void ReportLock(bool editable);
     }
 }

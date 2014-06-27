@@ -84,7 +84,7 @@ namespace WindowsEditor.Wpf.ViewModel
         private void SwtichEditorState(bool report)
         {
             IsEditorModeOn = !IsEditorModeOn;
-            if(report) networkClient.ReportLock();
+            if(report) networkClient.ReportLock(isEditorModeOn);
         }
 
 
