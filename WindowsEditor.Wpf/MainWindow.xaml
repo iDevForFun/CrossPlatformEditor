@@ -6,35 +6,43 @@
     <Window.Resources>
         <converters:ImageToSourceConverter x:Key="ImageToSourceConverter"/>
     </Window.Resources>
-    <Grid>
+
+    <Grid  Margin="0,12,12,0" HorizontalAlignment="Left" Width="600">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="142"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
+            <RowDefinition Height="80"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Image Source="Assets/albelli.png" Width="130" HorizontalAlignment="Left"/>
-        <Grid  Grid.Row="1"  HorizontalAlignment="Left" Width="600">
-        <StackPanel Margin="12,0">
-                <StackPanel Orientation="Horizontal">
-                    <ComboBox
+        <Image Margin="12,0,0,0" Grid.Column="0" Grid.Row="0" Source="Assets/albelli.png" Width="130" HorizontalAlignment="Left"/>
+        <StackPanel Margin="12,0,0,0" Height="27" Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+            <ComboBox
                         IsEnabled="{Binding IsEditorModeOn}"
                         SelectedItem="{Binding SelectedImagePath}"
                         ItemsSource="{Binding ImagesList}" Width="200"/>
-                    <Button
+            <Button
                         IsEnabled="{Binding IsEditorModeOn}"
                         Content="select file" Command="{Binding ButtonCommand}" Margin="12,0,0,0"/>
-                    <CheckBox 
+            <CheckBox 
                         Command="{Binding EditModeCommand}"
                         CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}, Mode=OneWay}"
                         Margin="12, 0, 0,0" Content="Edit mode"/>
-                </StackPanel>
-                <Border Margin="0,12" Background="LightGray">
-                    <Image Margin="12" Width="576" Height="600" Source="{Binding Image, Converter={StaticResource ImageToSourceConverter}}"/>
-                </Border>
-                <Button Content="flip" Command="{Binding FlipCommand}"/>
-            </StackPanel>
-        </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="12,0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Border Margin="0,12" Background="LightGray">
+                <Image Margin="12,12,12,12" Height="600" Source="{Binding Image, Converter={StaticResource ImageToSourceConverter}}"/>
+            </Border>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="0,0,12,0" Grid.Column="0" Content="flip" Command="{Binding FlipCommand}"/>
+                <Button Margin="12,0,0,0" Grid.Column="1" Content="rotate" Command="{Binding RotateCommand}"/>
+            </Grid>
+
+        </StackPanel>
     </Grid>
 </Window>

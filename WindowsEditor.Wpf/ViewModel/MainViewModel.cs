@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Input;
@@ -21,6 +22,7 @@ namespace WindowsEditor.Wpf.ViewModel
         private string selectedImagePath;
         private bool isEditorModeOn;
         private RelayCommand editModeCommand;
+        private RelayCommand rotateCommand;
 
         public MainViewModel()
         {
@@ -29,14 +31,28 @@ namespace WindowsEditor.Wpf.ViewModel
             networkClient = new NetworkClient();
             ImagesList = new ObservableCollection<string>(imageLoader.Images);
             SelectedImagePath = ImagesList.First();
+            InitCommands();
+            Listen();
+        }
+
+        private void InitCommands()
+        {
             ButtonCommand = new RelayCommand(_ => SelectImage(SelectedImagePath, true));
             FlipCommand = new RelayCommand(_ => Flip(true), _ => (Image != null && IsEditorModeOn));
-            EditModeCommand = new RelayCommand(state =>
+            RotateCommand = new RelayCommand(_ => Rotate(true), _ => (Image != null && IsEditorModeOn));
+            EditModeCommand = new RelayCommand(state => SwtichEditorState(true));
+        }
+
+
+        public RelayCommand RotateCommand
+        {
+            get { return rotateCommand; }
+            set
             {
-                var isChecked = (bool) state;
-                SwtichEditorState(true);
-            });
-            Listen();
+                if (Equals(value, rotateCommand)) return;
+                rotateCommand = value;
+                OnPropertyChanged();
+            }
         }
 
 
@@ -45,6 +61,7 @@ namespace WindowsEditor.Wpf.ViewModel
             networkClient.OnNetworkEvent()
                 .Subscribe(networkEvent =>
             {
+                Debug.WriteLine("network event recieved, event type:{0}", Enum.GetName(typeof(EventType),networkEvent.Type));
                 switch (networkEvent.Type)
                 {
                     case EventType.Loaded:
@@ -58,7 +75,7 @@ namespace WindowsEditor.Wpf.ViewModel
                     case EventType.Lock:
                         SwtichEditorState(false);
                         break;
-                    case EventType.Stop:
+                    case EventType.Rotate:
                         break;
                 }
             });
@@ -78,7 +95,15 @@ namespace WindowsEditor.Wpf.ViewModel
                 Image = imageLoader.FlipHorizontal(Image);  
                 if(report) networkClient.ReportFlip();
             }
-            
+        }
+
+        private void Rotate(bool report)
+        {
+            if (RotateCommand.CanExecute(null))
+            {
+                Image = imageLoader.Rotate(Image);
+                if (report) networkClient.ReportRotate();
+            }
         }
 
         public RelayCommand EditModeCommand
