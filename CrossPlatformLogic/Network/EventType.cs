@@ -1,9 +1,10 @@
-﻿namespace CrossPlatformLogic.Network
+namespace CrossPlatformLogic.Network
 {
     public enum EventType
     {
-        Loaded,
+        Loaded = 0,
 		Flip,
+		Lock,
 		Rotate
     }
 }

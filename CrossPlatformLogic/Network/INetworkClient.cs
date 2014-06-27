@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reactive;
+using System.Threading;
 
 namespace CrossPlatformLogic.Network
 {
@@ -9,5 +10,6 @@ namespace CrossPlatformLogic.Network
         void ReportFlip();
 		void ReportRotate();
         IObservable<NetworkEvent> OnNetworkEvent();
+        void ReportLock();
     }
 }

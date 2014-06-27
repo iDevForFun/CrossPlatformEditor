@@ -4,8 +4,6 @@ using System.Linq;
 using System.Windows.Input;
 using CrossPlatformLogic;
 using CrossPlatformLogic.Network;
-using Microsoft.Win32;
-using System.Reactive.Linq;
 using System;
 
 namespace WindowsEditor.Wpf.ViewModel
@@ -19,9 +17,10 @@ namespace WindowsEditor.Wpf.ViewModel
         private string title;
         private Image image;
         private RelayCommand flipCommand;
-        private RelayCommand listenCommand;
         private ObservableCollection<string> imagesList;
         private string selectedImagePath;
+        private bool isEditorModeOn;
+        private RelayCommand editModeCommand;
 
         public MainViewModel()
         {
@@ -31,7 +30,12 @@ namespace WindowsEditor.Wpf.ViewModel
             ImagesList = new ObservableCollection<string>(imageLoader.Images);
             SelectedImagePath = ImagesList.First();
             ButtonCommand = new RelayCommand(_ => SelectImage(SelectedImagePath, true));
-            FlipCommand = new RelayCommand(_ => Flip(true), _ => Image != null);
+            FlipCommand = new RelayCommand(_ => Flip(true), _ => (Image != null && IsEditorModeOn));
+            EditModeCommand = new RelayCommand(state =>
+            {
+                var isChecked = (bool) state;
+                SwtichEditorState(true);
+            });
             Listen();
         }
 
@@ -51,11 +55,21 @@ namespace WindowsEditor.Wpf.ViewModel
                     case EventType.Flip:
                         Flip(false);
                         break;
+                    case EventType.Lock:
+                        SwtichEditorState(false);
+                        break;
                     case EventType.Stop:
                         break;
                 }
             });
         }
+
+        private void SwtichEditorState(bool report)
+        {
+            IsEditorModeOn = !IsEditorModeOn;
+            if(report) networkClient.ReportLock();
+        }
+
 
         private void Flip(bool report)
         {
@@ -67,6 +81,16 @@ namespace WindowsEditor.Wpf.ViewModel
             
         }
 
+        public RelayCommand EditModeCommand
+        {
+            get { return editModeCommand; }
+            set
+            {
+                if (Equals(value, editModeCommand)) return;
+                editModeCommand = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string Title
         {
@@ -108,6 +132,18 @@ namespace WindowsEditor.Wpf.ViewModel
             {
                 if (Equals(value, imagesList)) return;
                 imagesList = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsEditorModeOn
+        {
+            get { return isEditorModeOn; }
+            set
+            {
+                if (value.Equals(isEditorModeOn)) return;
+                FlipCommand.RaiseCanExecuteChanged();
+                isEditorModeOn = value;
                 OnPropertyChanged();
             }
         }

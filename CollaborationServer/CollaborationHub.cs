@@ -30,7 +30,16 @@ namespace CollaborationServer
 				Data = fileName,
 				Type = EventType.Loaded
 			});
-
 		}
+
+        public void SendLock()
+        {
+            Clients.Others.broadcastLoad(new NetworkEvent
+            {
+                Message = "lock",
+                Data = string.Empty,
+                Type = EventType.Lock
+            });
+        }
     }
 }
