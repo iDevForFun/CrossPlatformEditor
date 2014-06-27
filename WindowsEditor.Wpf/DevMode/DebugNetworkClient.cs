@@ -28,7 +28,7 @@ namespace WindowsEditor.Wpf.DevMode
             return Observable.Empty<NetworkEvent>();
         }
 
-        public void ReportLock()
+        public void ReportLock(bool editing)
         {
             Debug.Write("report loaded");
         }

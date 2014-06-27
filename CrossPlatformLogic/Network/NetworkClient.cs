@@ -34,10 +34,10 @@ namespace CrossPlatformLogic.Network
 			Debug.WriteLine("Image flipped");
         }
 
-        public async void ReportLock()
+		public async void ReportLock(bool editing)
         {
             await EnsureConnectionState();
-            hubProxy.Invoke("SendLock");
+			hubProxy.Invoke("SendLock", editing);
             Debug.WriteLine("editor mode");
         }
 

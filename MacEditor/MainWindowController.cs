@@ -93,6 +93,7 @@ namespace MacEditor
 				if (x.Type == EventType.Lock){
 					this.InvokeOnMainThread(() => 
 						{
+							bool.TryParse(x.Data, out editModeOn);
 							editModeOn = !editModeOn;
 							SetEditMode(editModeOn, false);
 						});
@@ -128,18 +129,7 @@ namespace MacEditor
 
 		partial void Click_Edit(NSObject sender)
 		{
-			editModeOn = !editModeOn;
-
-			ImageDropDown.Enabled = EditCheckBox.State == NSCellStateValue.On;
-			SelectBtn.Enabled = EditCheckBox.State == NSCellStateValue.On;
-
-			if (imageLoaded) {
-
-				FlipBtn.Enabled = EditCheckBox.State == NSCellStateValue.On;
-				RotateBtn.Enabled = EditCheckBox.State == NSCellStateValue.On;
-			}
-
-			client.ReportLock();
+			SetEditMode(EditCheckBox.State == NSCellStateValue.On, true);
 		}
 
 		private void LoadImage(string fileName, bool report)
@@ -171,17 +161,20 @@ namespace MacEditor
 
 		private void SetEditMode(bool editable, bool report)
 		{
-			editModeOn = editable;
-			if (EditCheckBox.State == NSCellStateValue.On) {
-				FlipBtn.Enabled = false;
-				RotateBtn.Enabled = false;
-				ImageDropDown.Enabled = false;
-				SelectBtn.Enabled = false;
+			if (!editable) EditCheckBox.State = NSCellStateValue.Off;
+			ImageDropDown.Enabled = editable;
+			SelectBtn.Enabled = editable;
+			if (imageLoaded) {
+				FlipBtn.Enabled = editable;
+				RotateBtn.Enabled = editable;
 			}
 
-			if (!editable) EditCheckBox.State = NSCellStateValue.Off;
-			EditCheckBox.Enabled = editable;
 
+			if (!report) {
+				EditCheckBox.Enabled = editable;
+
+				client.ReportLock (EditCheckBox.State == NSCellStateValue.On);
+			}
 
 		}
 
