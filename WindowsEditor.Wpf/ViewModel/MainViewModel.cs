@@ -20,6 +20,7 @@ namespace WindowsEditor.Wpf.ViewModel
         private ObservableCollection<string> imagesList;
         private string selectedImagePath;
         private bool isEditorModeOn;
+        private RelayCommand editModeCommand;
 
         public MainViewModel()
         {
@@ -30,6 +31,11 @@ namespace WindowsEditor.Wpf.ViewModel
             SelectedImagePath = ImagesList.First();
             ButtonCommand = new RelayCommand(_ => SelectImage(SelectedImagePath, true));
             FlipCommand = new RelayCommand(_ => Flip(true), _ => (Image != null && IsEditorModeOn));
+            EditModeCommand = new RelayCommand(state =>
+            {
+                var isChecked = (bool) state;
+                SwtichEditorState(true);
+            });
             Listen();
         }
 
@@ -50,12 +56,18 @@ namespace WindowsEditor.Wpf.ViewModel
                         Flip(false);
                         break;
                     case EventType.Lock:
-                        IsEditorModeOn = !IsEditorModeOn;
+                        SwtichEditorState(false);
                         break;
                     case EventType.Stop:
                         break;
                 }
             });
+        }
+
+        private void SwtichEditorState(bool report)
+        {
+            IsEditorModeOn = !IsEditorModeOn;
+            if(report) networkClient.ReportLock();
         }
 
 
@@ -69,6 +81,16 @@ namespace WindowsEditor.Wpf.ViewModel
             
         }
 
+        public RelayCommand EditModeCommand
+        {
+            get { return editModeCommand; }
+            set
+            {
+                if (Equals(value, editModeCommand)) return;
+                editModeCommand = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string Title
         {
