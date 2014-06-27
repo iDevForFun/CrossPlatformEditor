@@ -26,6 +26,7 @@
                         IsEnabled="{Binding IsEditorModeOn}"
                         Content="select file" Command="{Binding ButtonCommand}" Margin="12,0,0,0"/>
             <CheckBox 
+                IsEnabled="{Binding IsCheckBoxEnabled}"
                         Command="{Binding EditModeCommand}"
                         CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}, Mode=OneWay}"
                         Margin="12, 0, 0,0" Content="Edit mode"/>

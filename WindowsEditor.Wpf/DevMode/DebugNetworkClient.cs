@@ -9,28 +9,28 @@ namespace WindowsEditor.Wpf.DevMode
     {
         public void ReportLoaded(string imagePath)
         {
-            Debug.Write("report loaded");
+            Debug.WriteLine("report loaded");
         }
 
         public void ReportFlip()
         {
-            Debug.Write("report loaded");
+            Debug.WriteLine("ReportFlip");
         }
 
         public void ReportRotate()
         {
-            Debug.Write("report loaded");
+            Debug.WriteLine("ReportRotate");
         }
 
         public IObservable<NetworkEvent> OnNetworkEvent()
         {
-            Debug.Write("report loaded");
+            Debug.WriteLine("OnNetworkEvent");
             return Observable.Empty<NetworkEvent>();
         }
 
         public void ReportLock(bool editing)
         {
-            Debug.Write("report loaded");
+            Debug.WriteLine("ReportLock");
         }
     }
 }

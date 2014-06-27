@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Input;
+using WindowsEditor.Wpf.DevMode;
 using CrossPlatformLogic;
 using CrossPlatformLogic.Network;
 using System;
@@ -23,16 +24,30 @@ namespace WindowsEditor.Wpf.ViewModel
         private bool isEditorModeOn;
         private RelayCommand editModeCommand;
         private RelayCommand rotateCommand;
+        private bool isCheckBoxEnabled;
 
         public MainViewModel()
         {
             Title = "Our nice windows editor";
             imageLoader = new ImageLoader();
+            IsCheckBoxEnabled = true;
             networkClient = new NetworkClient();
+//            networkClient = new DebugNetworkClient();
             ImagesList = new ObservableCollection<string>(imageLoader.Images);
             SelectedImagePath = ImagesList.First();
             InitCommands();
             Listen();
+        }
+
+        public bool IsCheckBoxEnabled
+        {
+            get { return isCheckBoxEnabled; }
+            set
+            {
+                if (value.Equals(isCheckBoxEnabled)) return;
+                isCheckBoxEnabled = value;
+                OnPropertyChanged();
+            }
         }
 
         private void InitCommands()
@@ -40,7 +55,7 @@ namespace WindowsEditor.Wpf.ViewModel
             ButtonCommand = new RelayCommand(_ => SelectImage(SelectedImagePath, true));
             FlipCommand = new RelayCommand(_ => Flip(true), _ => (Image != null && IsEditorModeOn));
             RotateCommand = new RelayCommand(_ => Rotate(true), _ => (Image != null && IsEditorModeOn));
-            EditModeCommand = new RelayCommand(state => SwtichEditorState(true));
+            EditModeCommand = new RelayCommand(state => SwtichEditorState(!IsEditorModeOn, true));
         }
 
 
@@ -60,31 +75,35 @@ namespace WindowsEditor.Wpf.ViewModel
         {
             networkClient.OnNetworkEvent()
                 .Subscribe(networkEvent =>
-            {
-                Debug.WriteLine("network event recieved, event type:{0}", Enum.GetName(typeof(EventType),networkEvent.Type));
-                switch (networkEvent.Type)
                 {
-                    case EventType.Loaded:
-                        var filename = networkEvent.Data;
-                        SelectedImagePath = filename;
-                        SelectImage(filename, false);
-                        break;
-                    case EventType.Flip:
-                        Flip(false);
-                        break;
-                    case EventType.Lock:
-                        SwtichEditorState(false);
-                        break;
-                    case EventType.Rotate:
-                        break;
-                }
-            });
+                    Debug.WriteLine("network event recieved, event type:{0}",
+                        Enum.GetName(typeof (EventType), networkEvent.Type));
+                    switch (networkEvent.Type)
+                    {
+                        case EventType.Loaded:
+                            var filename = networkEvent.Data;
+                            SelectedImagePath = filename;
+                            SelectImage(filename, false);
+                            break;
+                        case EventType.Flip:
+                            Flip(false);
+                            break;
+                        case EventType.Lock:
+                            bool state;
+                            bool.TryParse(networkEvent.Data, out state);
+                            IsCheckBoxEnabled = state;
+                            SwtichEditorState(!state, false);
+                            break;
+                        case EventType.Rotate:
+                            break;
+                    }
+                });
         }
 
-        private void SwtichEditorState(bool report)
+        private void SwtichEditorState(bool state, bool report)
         {
-            IsEditorModeOn = !IsEditorModeOn;
-            if(report) networkClient.ReportLock(isEditorModeOn);
+            IsEditorModeOn = state;
+            if (report) networkClient.ReportLock(isEditorModeOn);
         }
 
 
@@ -92,8 +111,8 @@ namespace WindowsEditor.Wpf.ViewModel
         {
             if (FlipCommand.CanExecute(null))
             {
-                Image = imageLoader.FlipHorizontal(Image);  
-                if(report) networkClient.ReportFlip();
+                Image = imageLoader.FlipHorizontal(Image);
+                if (report) networkClient.ReportFlip();
             }
         }
 
@@ -187,13 +206,13 @@ namespace WindowsEditor.Wpf.ViewModel
 
         private void SelectImage(string filename, bool report)
         {
-            if(string.IsNullOrWhiteSpace(filename)) filename = "RSV4-1.jpg";
+            if (string.IsNullOrWhiteSpace(filename)) filename = "RSV4-1.jpg";
             FilePath = filename;
             var img = imageLoader.LoadImage(filename);
             if (img != null)
             {
                 Image = img;
-                if(report) networkClient.ReportLoaded(filename);
+                if (report) networkClient.ReportLoaded(filename);
             }
         }
 
