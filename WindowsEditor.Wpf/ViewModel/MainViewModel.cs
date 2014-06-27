@@ -30,7 +30,7 @@ namespace WindowsEditor.Wpf.ViewModel
             networkClient = new NetworkClient();
             ImagesList = new ObservableCollection<string>(imageLoader.Images);
             SelectedImagePath = ImagesList.First();
-            ButtonCommand = new RelayCommand(_ => SelectImage(SelectedImagePath, false));
+            ButtonCommand = new RelayCommand(_ => SelectImage(SelectedImagePath, true));
             FlipCommand = new RelayCommand(_ => Flip(true), _ => Image != null);
             Listen();
         }
