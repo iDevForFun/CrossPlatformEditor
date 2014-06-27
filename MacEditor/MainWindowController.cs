@@ -14,6 +14,8 @@ namespace MacEditor
 	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
 	{
 		private INetworkClient client;
+		private bool editModeOn;
+		private bool imageLoaded; 
 
 		#region Constructors
 
@@ -41,6 +43,8 @@ namespace MacEditor
 		void Initialize ()
 		{
 			client = new NetworkClient ();
+			editModeOn = false;
+			imageLoaded = false;
 		}
 
 		#endregion
@@ -84,6 +88,17 @@ namespace MacEditor
 				}
 			});
 
+			client.OnNetworkEvent().Subscribe (x => { 
+
+				if (x.Type == EventType.Lock){
+					this.InvokeOnMainThread(() => 
+						{
+							editModeOn = !editModeOn;
+							SetEditMode(editModeOn, false);
+						});
+				}
+			});
+
 			client.OnNetworkEvent ().Subscribe (x => {
 				if (x.Type == EventType.Loaded){
 					this.InvokeOnMainThread(() => 
@@ -111,6 +126,22 @@ namespace MacEditor
 			Rotate(true);
 		}
 
+		partial void Click_Edit(NSObject sender)
+		{
+			editModeOn = !editModeOn;
+
+			ImageDropDown.Enabled = EditCheckBox.State == NSCellStateValue.On;
+			SelectBtn.Enabled = EditCheckBox.State == NSCellStateValue.On;
+
+			if (imageLoaded) {
+
+				FlipBtn.Enabled = EditCheckBox.State == NSCellStateValue.On;
+				RotateBtn.Enabled = EditCheckBox.State == NSCellStateValue.On;
+			}
+
+			client.ReportLock();
+		}
+
 		private void LoadImage(string fileName, bool report)
 		{
 
@@ -123,11 +154,14 @@ namespace MacEditor
 				var nsImage = ConvertFromImage(image);
 
 				ImageView.Image = nsImage;
-				FlipBtn.Enabled = true;
-				RotateBtn.Enabled = true;
+				if(EditCheckBox.State == NSCellStateValue.On)
+				{
+					FlipBtn.Enabled = true;
+					RotateBtn.Enabled = true;
+				}
 			
 				if(report) client.ReportLoaded(fileName);
-
+				imageLoaded = true;
 			}
 			catch(Exception ex)
 			{
@@ -135,8 +169,19 @@ namespace MacEditor
 			}
 		}
 
-		private void SetEditMode(bool editable)
+		private void SetEditMode(bool editable, bool report)
 		{
+			editModeOn = editable;
+			if (EditCheckBox.State == NSCellStateValue.On) {
+				FlipBtn.Enabled = false;
+				RotateBtn.Enabled = false;
+				ImageDropDown.Enabled = false;
+				SelectBtn.Enabled = false;
+			}
+
+			if (!editable) EditCheckBox.State = NSCellStateValue.Off;
+			EditCheckBox.Enabled = editable;
+
 
 		}
 

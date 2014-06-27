@@ -6,12 +6,14 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
+                <outlet property="EditCheckBox" destination="SEk-Gn-sEU" id="b0H-ly-Aoy"/>
                 <outlet property="FlipBtn" destination="NCQ-RP-ZDG" id="rpc-1W-JDF"/>
                 <outlet property="ImageDropDown" destination="WqT-CZ-bSi" id="Zhn-bu-qQm"/>
                 <outlet property="ImageView" destination="Tx0-I1-HpZ" id="qf3-7H-aEV"/>
                 <outlet property="Logo" destination="jRQ-hT-JtZ" id="1TP-Bm-5bj"/>
                 <outlet property="MessageLabel" destination="UaH-mR-EMN" id="0iH-28-jkV"/>
                 <outlet property="RotateBtn" destination="Y2Q-nL-lOV" id="9JG-LN-DM0"/>
+                <outlet property="SelectBtn" destination="acC-Bi-LAE" id="1fS-2w-C2N"/>
                 <outlet property="window" destination="2" id="6"/>
             </connections>
         </customObject>
@@ -27,9 +29,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" id="acC-Bi-LAE">
-                        <rect key="frame" x="455" y="428" width="118" height="32"/>
+                        <rect key="frame" x="371" y="428" width="118" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Select File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wLD-zR-DEb">
+                        <buttonCell key="cell" type="push" title="Select File" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wLD-zR-DEb">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <connections>
@@ -63,9 +65,9 @@
                         </textFieldCell>
                     </textField>
                     <comboBox verticalHuggingPriority="750" id="WqT-CZ-bSi">
-                        <rect key="frame" x="183" y="432" width="262" height="26"/>
+                        <rect key="frame" x="183" y="432" width="189" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="8y6-Rm-QBL">
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="8y6-Rm-QBL">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -85,6 +87,17 @@
                         </buttonCell>
                         <connections>
                             <action selector="Click_Rotate:" target="-2" id="GYp-Z3-GrM"/>
+                        </connections>
+                    </button>
+                    <button id="SEk-Gn-sEU">
+                        <rect key="frame" x="498" y="436" width="61" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Edit" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bsw-tQ-PlW">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="Click_Edit:" target="-2" id="egT-Lr-zB6"/>
                         </connections>
                     </button>
                 </subviews>

@@ -58,7 +58,7 @@ namespace WindowsEditor.Wpf.ViewModel
                     case EventType.Lock:
                         SwtichEditorState(false);
                         break;
-                    case EventType.Stop:
+                    case EventType.Rotate:
                         break;
                 }
             });

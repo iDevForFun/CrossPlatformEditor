@@ -13,6 +13,9 @@ namespace MacEditor
 	partial class MainWindowController
 	{
 		[Outlet]
+		MonoMac.AppKit.NSButton EditCheckBox { get; set; }
+
+		[Outlet]
 		MonoMac.AppKit.NSButton FlipBtn { get; set; }
 
 		[Outlet]
@@ -30,8 +33,14 @@ namespace MacEditor
 		[Outlet]
 		MonoMac.AppKit.NSButton RotateBtn { get; set; }
 
+		[Outlet]
+		MonoMac.AppKit.NSButton SelectBtn { get; set; }
+
 		[Action ("Click_Button:")]
 		partial void Click_Button (MonoMac.Foundation.NSObject sender);
+
+		[Action ("Click_Edit:")]
+		partial void Click_Edit (MonoMac.Foundation.NSObject sender);
 
 		[Action ("Click_Flip:")]
 		partial void Click_Flip (MonoMac.Foundation.NSObject sender);
@@ -49,9 +58,14 @@ namespace MacEditor
 				FlipBtn = null;
 			}
 
-			if (RotateBtn != null) {
-				RotateBtn.Dispose ();
-				RotateBtn = null;
+			if (SelectBtn != null) {
+				SelectBtn.Dispose ();
+				SelectBtn = null;
+			}
+
+			if (EditCheckBox != null) {
+				EditCheckBox.Dispose ();
+				EditCheckBox = null;
 			}
 
 			if (ImageDropDown != null) {
@@ -72,6 +86,11 @@ namespace MacEditor
 			if (MessageLabel != null) {
 				MessageLabel.Dispose ();
 				MessageLabel = null;
+			}
+
+			if (RotateBtn != null) {
+				RotateBtn.Dispose ();
+				RotateBtn = null;
 			}
 		}
 	}
