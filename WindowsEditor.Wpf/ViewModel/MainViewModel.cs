@@ -54,7 +54,11 @@ namespace WindowsEditor.Wpf.ViewModel
             ButtonCommand = new RelayCommand(_ => SelectImage(SelectedImagePath, true));
             FlipCommand = new RelayCommand(_ => Flip(true), _ => (Image != null && IsEditorModeOn));
             RotateCommand = new RelayCommand(_ => Rotate(true), _ => (Image != null && IsEditorModeOn));
-            EditModeCommand = new RelayCommand(state => SwtichEditorState(!IsEditorModeOn, true));
+            EditModeCommand = new RelayCommand(state =>
+                                               {
+                                                   IsCheckBoxEnabled = !(bool)state;
+                                                   SwtichEditorState(!IsEditorModeOn, true);
+                                               });
         }
 
 
@@ -90,10 +94,11 @@ namespace WindowsEditor.Wpf.ViewModel
                         case EventType.Lock:
                             bool state;
                             bool.TryParse(networkEvent.Data, out state);
-                            IsCheckBoxEnabled = state;
+                            IsCheckBoxEnabled = !state;
                             SwtichEditorState(!state, false);
                             break;
                         case EventType.Rotate:
+                            Rotate(false);
                             break;
                     }
                 });

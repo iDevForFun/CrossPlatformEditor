@@ -14,7 +14,6 @@ namespace MacEditor
 	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
 	{
 		private INetworkClient client;
-		private bool editModeOn;
 		private bool imageLoaded; 
 
 		#region Constructors
@@ -43,7 +42,6 @@ namespace MacEditor
 		void Initialize ()
 		{
 			client = new NetworkClient ();
-			editModeOn = false;
 			imageLoaded = false;
 		}
 
@@ -93,9 +91,9 @@ namespace MacEditor
 				if (x.Type == EventType.Lock){
 					this.InvokeOnMainThread(() => 
 						{
-							bool.TryParse(x.Data, out editModeOn);
-							editModeOn = !editModeOn;
-							SetEditMode(editModeOn, false);
+							bool isEditing;
+							bool.TryParse(x.Data, out isEditing);
+							SetEditMode(!isEditing, false);
 						});
 				}
 			});
@@ -162,19 +160,27 @@ namespace MacEditor
 		private void SetEditMode(bool editable, bool report)
 		{
 			if (!editable) EditCheckBox.State = NSCellStateValue.Off;
-			ImageDropDown.Enabled = editable;
-			SelectBtn.Enabled = editable;
-			if (imageLoaded) {
-				FlipBtn.Enabled = editable;
-				RotateBtn.Enabled = editable;
-			}
+
+				ImageDropDown.Enabled = editable;
+				SelectBtn.Enabled = editable;
+				if (imageLoaded) {
+					FlipBtn.Enabled = editable;
+					RotateBtn.Enabled = editable;
+				}
 
 
-			if (!report) {
-				EditCheckBox.Enabled = editable;
-
+//			if (!report) {
+//				EditCheckBox.Enabled = editable;
+//				if (EditCheckBox.State == NSCellStateValue.On) {
+//					ImageDropDown.Enabled = editable;
+//					SelectBtn.Enabled = editable;
+//					if (imageLoaded) {
+//						FlipBtn.Enabled = editable;
+//						RotateBtn.Enabled = editable;
+//					}
+			//}
 				client.ReportLock (EditCheckBox.State == NSCellStateValue.On);
-			}
+			//}
 
 		}
 

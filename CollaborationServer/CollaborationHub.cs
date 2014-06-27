@@ -34,7 +34,7 @@ namespace CollaborationServer
 
 		public void SendLock(bool editing)
         {
-            Clients.Others.broadcastLoad(new NetworkEvent
+            Clients.Others.broadcastLock(new NetworkEvent
             {
                 Message = "lock",
 					Data = editing.ToString(),

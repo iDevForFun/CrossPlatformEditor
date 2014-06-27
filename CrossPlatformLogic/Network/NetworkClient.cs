@@ -81,6 +81,11 @@ namespace CrossPlatformLogic.Network
                 {
                     observer.OnNext(networkEvent);
                 });
+
+                hubProxy.On<NetworkEvent>("broadcastLock", networkEvent =>
+                {
+                    observer.OnNext(networkEvent);
+                });
             }));
         }
     }
