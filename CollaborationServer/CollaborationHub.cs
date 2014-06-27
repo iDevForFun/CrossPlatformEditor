@@ -5,27 +5,23 @@ namespace CollaborationServer
 {
     public class CollaborationHub : Hub
     {
-        public void SendFlip(int clientId)
+        public void SendFlip()
         {
             Clients.Others.broadcastFlip(new NetworkEvent
             {
-                ClientId = clientId,
                 Message = "flip",
                 Type = EventType.Flip
             });
         }
 
-		public void LoadImage(string fileName, int clientId)
+		public void LoadImage(string fileName)
 		{
-			Clients.Others.broadcastLoad(new NetworkEvent
-				{
-                    ClientId = clientId,
-					Message = "loaded",
-					Data = fileName,
-					Type = EventType.Loaded
-				});
+			Clients.Others.broadcastLoad (new NetworkEvent {
+				Message = "loaded",
+				Data = fileName,
+				Type = EventType.Loaded
+			});
 
 		}
-
     }
 }

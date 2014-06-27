@@ -14,7 +14,6 @@ namespace MacEditor
 	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
 	{
 		private INetworkClient client;
-		private const int ClientID = 2;
 
 		#region Constructors
 
@@ -68,7 +67,7 @@ namespace MacEditor
 
 			client.OnNetworkEvent().Subscribe (x => { 
 
-				if (x.ClientId != ClientID && x.Type == EventType.Flip){
+				if (x.Type == EventType.Flip){
 					this.InvokeOnMainThread(() => 
 						{
 							Flip(false);
@@ -77,7 +76,7 @@ namespace MacEditor
 			});
 
 			client.OnNetworkEvent ().Subscribe (x => {
-				if (x.ClientId != ClientID && x.Type == EventType.Loaded){
+				if (x.Type == EventType.Loaded){
 					this.InvokeOnMainThread(() => 
 						{
 							LoadImage(x.Data, false);
@@ -112,7 +111,7 @@ namespace MacEditor
 				ImageView.Image = nsImage;
 				FlipBtn.Enabled = true;
 			
-				if(report) client.ReportLoaded(fileName, ClientID);
+				if(report) client.ReportLoaded(fileName);
 
 			}
 			catch(Exception ex)
@@ -130,7 +129,7 @@ namespace MacEditor
 			bitmap = loader.FlipHorizontal ((Image)bitmap) as Bitmap;
 
 			ImageView.Image = ConvertFromImage (bitmap);
-			if(report) client.ReportFlip (ClientID);
+			if(report) client.ReportFlip ();
 
 		}
 

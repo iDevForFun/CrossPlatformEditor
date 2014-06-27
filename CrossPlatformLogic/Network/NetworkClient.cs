@@ -19,25 +19,25 @@ namespace CrossPlatformLogic.Network
             hubProxy = hubConnection.CreateHubProxy("CollaborationHub");
         }
 
-        public async void ReportLoaded(string fileName, int clientId)
+        public async void ReportLoaded(string fileName)
         {
             if (hubConnection.State == ConnectionState.Disconnected)
             {
                 await hubConnection.Start();
             }
 
-            hubProxy.Invoke<string>("LoadImage", fileName, clientId);
+            hubProxy.Invoke<string>("LoadImage", fileName);
             Debug.WriteLine(string.Format("Image loaded: {0}", fileName));
         }
 
-        public async void ReportFlip(int clientId)
+        public async void ReportFlip()
         {
             if (hubConnection.State == ConnectionState.Disconnected)
             {
 				await hubConnection.Start();
             }
 
-			hubProxy.Invoke("SendFlip", clientId);
+			hubProxy.Invoke("SendFlip");
 			Debug.WriteLine("Image flipped");
         }
 
