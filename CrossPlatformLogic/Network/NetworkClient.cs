@@ -2,46 +2,61 @@
 using System.Diagnostics;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
+using Microsoft.AspNet.SignalR.Client;
 using System.Threading;
+
 
 namespace CrossPlatformLogic.Network
 {
     public class NetworkClient : INetworkClient
     {
-        public void ReportLoaded(string imagePath)
+        private HubConnection hubConnection;
+        private IHubProxy hubProxy;
+
+        public NetworkClient()
         {
-            Debug.WriteLine(string.Format("Image loaded: {0}", imagePath));
+			hubConnection = new HubConnection("http://10.211.55.5/CollaborationServer/");
+            hubProxy = hubConnection.CreateHubProxy("CollaborationHub");
         }
 
-        public void ReportFlip()
+        public async void ReportLoaded(string fileName, int clientId)
         {
-            Debug.WriteLine("Image fliped");
+            if (hubConnection.State == ConnectionState.Disconnected)
+            {
+                await hubConnection.Start();
+            }
+
+            hubProxy.Invoke<string>("LoadImage", fileName, clientId);
+            Debug.WriteLine(string.Format("Image loaded: {0}", fileName));
+        }
+
+        public async void ReportFlip(int clientId)
+        {
+            if (hubConnection.State == ConnectionState.Disconnected)
+            {
+				await hubConnection.Start();
+            }
+
+			hubProxy.Invoke("SendFlip", clientId);
+			Debug.WriteLine("Image flipped");
         }
 
         public IObservable<NetworkEvent> OnNetworkEvent()
+
         {
-            var onNetworkEvent = Observable.Create<NetworkEvent>(observer =>
+            return  Observable.Create<NetworkEvent>(observer => 
+                Scheduler.Default.Schedule(() =>
             {
-                observer.OnNext(new NetworkEvent
+                hubProxy.On<NetworkEvent>("broadcastFlip", networkEvent =>
                 {
-                    Type = EventType.Loaded
+                    observer.OnNext(networkEvent);
                 });
-                return Scheduler.Default.Schedule(() =>
+
+                hubProxy.On<NetworkEvent>("broadcastLoad", networkEvent =>
                 {
-                    int i = 0;
-                    for (;;)
-                    {
-                        Thread.Sleep(1000); // here we do the long lasting background operation
-                        i++;
-                        var networkEvent = new NetworkEvent
-                        {
-                            Type = EventType.Flip
-                        };
-                        observer.OnNext(networkEvent);
-                    }
+                    observer.OnNext(networkEvent);
                 });
-            });
-            return onNetworkEvent;
+            }));
         }
     }
 }

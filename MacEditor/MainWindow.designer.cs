@@ -16,10 +16,10 @@ namespace MacEditor
 		MonoMac.AppKit.NSButton FlipBtn { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSImageView ImageView { get; set; }
+		MonoMac.AppKit.NSComboBox ImageDropDown { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton ListenBtn { get; set; }
+		MonoMac.AppKit.NSImageView ImageView { get; set; }
 
 		[Outlet]
 		MonoMac.AppKit.NSTextField MessageLabel { get; set; }
@@ -40,14 +40,14 @@ namespace MacEditor
 				FlipBtn = null;
 			}
 
+			if (ImageDropDown != null) {
+				ImageDropDown.Dispose ();
+				ImageDropDown = null;
+			}
+
 			if (ImageView != null) {
 				ImageView.Dispose ();
 				ImageView = null;
-			}
-
-			if (ListenBtn != null) {
-				ListenBtn.Dispose ();
-				ListenBtn = null;
 			}
 
 			if (MessageLabel != null) {

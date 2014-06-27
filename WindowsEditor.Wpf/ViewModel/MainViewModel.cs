@@ -10,6 +10,7 @@ namespace WindowsEditor.Wpf.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
+        private const int ClientID = 1;
         private ICommand buttonCommand;
         private readonly ImageLoader imageLoader;
         private readonly INetworkClient networkClient;
@@ -24,29 +25,36 @@ namespace WindowsEditor.Wpf.ViewModel
             Title = "Our nice windows editor";
             imageLoader = new ImageLoader();
             networkClient = new NetworkClient();
-            ButtonCommand = new RelayCommand(_ => SelectImage());
-            FlipCommand=  new RelayCommand(_ => Flip(), _ => Image != null);
+            ButtonCommand = new RelayCommand(_ => SelectImage(string.Empty, false));
+            FlipCommand=  new RelayCommand(_ => Flip(true), _ => Image != null);
             ListenCommand = new RelayCommand(_ => Listen());
+
         }
+
 
         private void Listen()
         {
             networkClient.OnNetworkEvent()
-                .Subscribe(networEvent =>
+                .Subscribe(networkEvent =>
             {
-                if (networEvent.Type == EventType.Flip)
+                if (networkEvent.ClientId != ClientID && networkEvent.Type == EventType.Flip)
                 {
-                    Flip();
+                    Flip(false);
+                }
+
+                if (networkEvent.ClientId != ClientID && networkEvent.Type == EventType.Loaded)
+                {
+                    SelectImage(networkEvent.Data, false);
                 }
             });
         }
 
-        private void Flip()
+        private void Flip(bool report)
         {
             if (FlipCommand.CanExecute(null))
             {
                 Image = imageLoader.FlipHorizontal(Image);  
-                networkClient.ReportFlip();
+                if(report) networkClient.ReportFlip(ClientID);
             }
             
         }
@@ -96,25 +104,26 @@ namespace WindowsEditor.Wpf.ViewModel
             }
         }
 
-        private void SelectImage()
+        private void SelectImage(string filename, bool report)
         {
-            var dlg = new OpenFileDialog
-            {
-                DefaultExt = ".jpg",
-                Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png"
-            };
-            var result = dlg.ShowDialog();
+        //    var dlg = new OpenFileDialog
+        //    {
+        //        DefaultExt = ".jpg",
+        //        Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png"
+        //    };
+        //    var result = dlg.ShowDialog();
 
-            if (result != true) return;
+        //    if (result != true) return;
 
 
-            var filename = dlg.FileName;
+            //var filename = dlg.FileName;
+             if(string.IsNullOrWhiteSpace(filename)) filename = "RSV4-1.jpg";
             FilePath = filename;
             var img = imageLoader.LoadImage(filename);
             if (img != null)
             {
                 Image = img;
-                networkClient.ReportLoaded(filename);
+                if(report) networkClient.ReportLoaded(filename, ClientID);
             }
         }
 

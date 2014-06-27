@@ -1,17 +1,44 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Collections.Generic;
+using System.Net;
+
 
 namespace CrossPlatformLogic
 {
     public class ImageLoader
     {
-		public Image LoadImage(string filePath)
-        {
-            if(!File.Exists(filePath)) throw new FileNotFoundException("No file found at this path", filePath);
-			if (!filePath.EndsWith(".jpg") && !filePath.EndsWith(".jpeg") && !filePath.EndsWith(".png")) throw new NotSupportedException("png or jpeg files only");
+		public IEnumerable<string> Images { get; set; }
+		private const string baseAddress = "http://10.211.55.5/ImageServer";
 
-            var image = new Bitmap(filePath);
+		public ImageLoader()
+		{
+			Images = new List<string>
+			{
+				"RSV4-1.jpg",
+				"S1000RR-1.jpg",
+				"ZX12R-1.jpg", 
+				"RGV500.jpg"
+			};
+		}
+
+		public Image LoadImage(string fileName)
+		{ 
+			var location = string.Format ("{0}/{1}", baseAddress, fileName);
+            
+            var request = (HttpWebRequest)WebRequest.Create(location);
+            request.ContentType = string.Format("image/{0}", fileName.Split('.')[1]);
+            request.Method = "GET";
+
+		    Bitmap image = null;
+
+            using (var response = request.GetResponse())
+            using (var stream = response.GetResponseStream())
+            {
+                image = new Bitmap(stream);
+            }
+			
             return image;
         }
 
