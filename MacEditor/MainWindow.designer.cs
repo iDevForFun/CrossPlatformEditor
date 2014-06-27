@@ -22,7 +22,13 @@ namespace MacEditor
 		MonoMac.AppKit.NSImageView ImageView { get; set; }
 
 		[Outlet]
+		MonoMac.AppKit.NSImageView Logo { get; set; }
+
+		[Outlet]
 		MonoMac.AppKit.NSTextField MessageLabel { get; set; }
+
+		[Outlet]
+		MonoMac.AppKit.NSButton RotateBtn { get; set; }
 
 		[Action ("Click_Button:")]
 		partial void Click_Button (MonoMac.Foundation.NSObject sender);
@@ -32,12 +38,20 @@ namespace MacEditor
 
 		[Action ("Click_Listen:")]
 		partial void Click_Listen (MonoMac.Foundation.NSObject sender);
+
+		[Action ("Click_Rotate:")]
+		partial void Click_Rotate (MonoMac.Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (FlipBtn != null) {
 				FlipBtn.Dispose ();
 				FlipBtn = null;
+			}
+
+			if (RotateBtn != null) {
+				RotateBtn.Dispose ();
+				RotateBtn = null;
 			}
 
 			if (ImageDropDown != null) {
@@ -48,6 +62,11 @@ namespace MacEditor
 			if (ImageView != null) {
 				ImageView.Dispose ();
 				ImageView = null;
+			}
+
+			if (Logo != null) {
+				Logo.Dispose ();
+				Logo = null;
 			}
 
 			if (MessageLabel != null) {

@@ -128,4 +128,7 @@
   </ItemGroup>
   <Import Project="..\CrossPlatformLogic\CrossPlatformLogic.projitems" Label="Shared" Condition="Exists('..\CrossPlatformLogic\CrossPlatformLogic.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="albelli.png" />
+  </ItemGroup>
 </Project>

@@ -14,6 +14,15 @@ namespace CollaborationServer
             });
         }
 
+		public void SendRotate()
+		{
+			Clients.Others.broadcastRotate(new NetworkEvent
+				{
+					Message = "rotate",
+					Type = EventType.Rotate
+				});
+		}
+
 		public void LoadImage(string fileName)
 		{
 			Clients.Others.broadcastLoad (new NetworkEvent {

@@ -7,6 +7,7 @@ namespace CrossPlatformLogic.Network
     {
         void ReportLoaded(string imagePath);
         void ReportFlip();
+		void ReportRotate();
         IObservable<NetworkEvent> OnNetworkEvent();
     }
 }

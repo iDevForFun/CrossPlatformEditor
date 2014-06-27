@@ -55,6 +55,7 @@ namespace MacEditor
 		public override void WindowDidLoad()
 		{
 			base.WindowDidLoad ();
+
 			var images = new ImageLoader ().Images;
 					
 			foreach (var item in images.Select (x => new NSString (x))) {
@@ -63,14 +64,22 @@ namespace MacEditor
 
 			if(images.Any()) ImageDropDown.Select (new NSString(images.First()));
 
-			FlipBtn.Enabled = false;
-
 			client.OnNetworkEvent().Subscribe (x => { 
 
 				if (x.Type == EventType.Flip){
 					this.InvokeOnMainThread(() => 
 						{
 							Flip(false);
+						});
+				}
+			});
+
+			client.OnNetworkEvent().Subscribe (x => { 
+
+				if (x.Type == EventType.Rotate){
+					this.InvokeOnMainThread(() => 
+						{
+							Rotate(false);
 						});
 				}
 			});
@@ -97,6 +106,11 @@ namespace MacEditor
 			Flip(true);
 		}
 
+		partial void Click_Rotate(NSObject sender){
+
+			Rotate(true);
+		}
+
 		private void LoadImage(string fileName, bool report)
 		{
 
@@ -110,6 +124,7 @@ namespace MacEditor
 
 				ImageView.Image = nsImage;
 				FlipBtn.Enabled = true;
+				RotateBtn.Enabled = true;
 			
 				if(report) client.ReportLoaded(fileName);
 
@@ -118,6 +133,11 @@ namespace MacEditor
 			{
 				MessageLabel.StringValue = string.Format("Error: {0}", ex.Message);
 			}
+		}
+
+		private void SetEditMode(bool editable)
+		{
+
 		}
 
 		private void Flip(bool report)
@@ -131,6 +151,18 @@ namespace MacEditor
 			ImageView.Image = ConvertFromImage (bitmap);
 			if(report) client.ReportFlip ();
 
+		}
+
+		private void Rotate(bool report)
+		{
+			var nsImg = ImageView.Image;
+			var bitmap = ConvertToImage(nsImg);
+			var loader = new ImageLoader ();
+
+			bitmap = loader.Rotate ((Image)bitmap) as Bitmap;
+
+			ImageView.Image = ConvertFromImage (bitmap);
+			if(report) client.ReportRotate ();
 		}
 
 		private NSImage ConvertFromImage(Bitmap img)

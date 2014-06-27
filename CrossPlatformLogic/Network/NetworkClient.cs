@@ -41,6 +41,17 @@ namespace CrossPlatformLogic.Network
 			Debug.WriteLine("Image flipped");
         }
 
+		public async void ReportRotate()
+		{
+			if (hubConnection.State == ConnectionState.Disconnected)
+			{
+				await hubConnection.Start();
+			}
+
+			hubProxy.Invoke("SendRotate");
+			Debug.WriteLine("Image rotated");
+		}
+
         public IObservable<NetworkEvent> OnNetworkEvent()
 
         {
@@ -51,6 +62,11 @@ namespace CrossPlatformLogic.Network
                 {
                     observer.OnNext(networkEvent);
                 });
+
+				hubProxy.On<NetworkEvent>("broadcastRotate", networkEvent =>
+				{
+					observer.OnNext(networkEvent);
+				});
 
                 hubProxy.On<NetworkEvent>("broadcastLoad", networkEvent =>
                 {

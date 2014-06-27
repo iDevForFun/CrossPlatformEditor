@@ -47,5 +47,11 @@ namespace CrossPlatformLogic
             image.RotateFlip(RotateFlipType.RotateNoneFlipX);
             return image;
         }
+
+		public Image Rotate(Image image)
+		{
+			image.RotateFlip (RotateFlipType.Rotate90FlipNone);
+			return image;
+		}
     }
 }
