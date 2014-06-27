@@ -168,6 +168,7 @@ namespace WindowsEditor.Wpf.ViewModel
             {
                 if (value.Equals(isEditorModeOn)) return;
                 FlipCommand.RaiseCanExecuteChanged();
+                RotateCommand.RaiseCanExecuteChanged();
                 isEditorModeOn = value;
                 OnPropertyChanged();
             }
@@ -214,6 +215,7 @@ namespace WindowsEditor.Wpf.ViewModel
             {
                 image = value;
                 FlipCommand.RaiseCanExecuteChanged();
+                RotateCommand.RaiseCanExecuteChanged();
                 OnPropertyChanged();
             }
         }

@@ -36,9 +36,9 @@ namespace CrossPlatformLogic.Network
 
         public async void ReportLock()
         {
+            Debug.WriteLine("editor mode");
             await EnsureConnectionState();
             hubProxy.Invoke("SendLock");
-            Debug.WriteLine("editor mode");
         }
 
         private async Task EnsureConnectionState()
