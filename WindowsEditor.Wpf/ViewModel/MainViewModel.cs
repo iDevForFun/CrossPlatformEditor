@@ -31,7 +31,7 @@ namespace WindowsEditor.Wpf.ViewModel
             imageLoader = new ImageLoader();
             IsCheckBoxEnabled = true;
             networkClient = new NetworkClient();
-//            networkClient = new WindowsEditor.Wpf.DevMode.DebugNetworkClient();
+//            networkClient = new DevMode.DebugNetworkClient();
             ImagesList = new ObservableCollection<string>(imageLoader.Images);
             SelectedImagePath = ImagesList.First();
             InitCommands();
@@ -54,11 +54,7 @@ namespace WindowsEditor.Wpf.ViewModel
             ButtonCommand = new RelayCommand(_ => SelectImage(SelectedImagePath, true));
             FlipCommand = new RelayCommand(_ => Flip(true), _ => (Image != null && IsEditorModeOn));
             RotateCommand = new RelayCommand(_ => Rotate(true), _ => (Image != null && IsEditorModeOn));
-            EditModeCommand = new RelayCommand(state =>
-                                               {
-                                                   IsCheckBoxEnabled = !(bool)state;
-                                                   SwtichEditorState(!IsEditorModeOn, true);
-                                               });
+            EditModeCommand = new RelayCommand(state => SwtichEditorState(!IsEditorModeOn, true));
         }
 
 
@@ -193,7 +189,7 @@ namespace WindowsEditor.Wpf.ViewModel
                 FlipCommand.RaiseCanExecuteChanged();
                 RotateCommand.RaiseCanExecuteChanged();
                 isEditorModeOn = value;
-                OnPropertyChanged();
+                OnPropertyChanged("IsEditorModeOn");
             }
         }
 
@@ -239,7 +235,7 @@ namespace WindowsEditor.Wpf.ViewModel
                 image = value;
                 FlipCommand.RaiseCanExecuteChanged();
                 RotateCommand.RaiseCanExecuteChanged();
-                OnPropertyChanged();
+                OnPropertyChanged("Image");
             }
         }
     }
