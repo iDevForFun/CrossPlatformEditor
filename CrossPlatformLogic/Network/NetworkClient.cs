@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Client;
 using System.Threading;
 
@@ -21,24 +22,31 @@ namespace CrossPlatformLogic.Network
 
         public async void ReportLoaded(string fileName)
         {
-            if (hubConnection.State == ConnectionState.Disconnected)
-            {
-                await hubConnection.Start();
-            }
-
+            await EnsureConnectionState();
             hubProxy.Invoke<string>("LoadImage", fileName);
             Debug.WriteLine(string.Format("Image loaded: {0}", fileName));
         }
 
         public async void ReportFlip()
         {
-            if (hubConnection.State == ConnectionState.Disconnected)
-            {
-				await hubConnection.Start();
-            }
-
+            await EnsureConnectionState();
 			hubProxy.Invoke("SendFlip");
 			Debug.WriteLine("Image flipped");
+        }
+
+        public async void ReportLock()
+        {
+            await EnsureConnectionState();
+            hubProxy.Invoke("SendLock");
+            Debug.WriteLine("editor mode");
+        }
+
+        private async Task EnsureConnectionState()
+        {
+            if (hubConnection.State == ConnectionState.Disconnected)
+            {
+                await hubConnection.Start();
+            }
         }
 
         public IObservable<NetworkEvent> OnNetworkEvent()

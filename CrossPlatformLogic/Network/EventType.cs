@@ -2,8 +2,9 @@
 {
     public enum EventType
     {
-        Loaded,
+        Loaded = 0,
 		Flip,
-		Stop
+		Stop,
+        Lock
     }
 }
