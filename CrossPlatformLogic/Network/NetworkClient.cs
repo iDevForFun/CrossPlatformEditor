@@ -18,6 +18,7 @@ namespace CrossPlatformLogic.Network
         {
 			hubConnection = new HubConnection("http://10.211.55.5/CollaborationServer/");
             hubProxy = hubConnection.CreateHubProxy("CollaborationHub");
+//            EnsureConnectionState();
         }
 
         public async void ReportLoaded(string fileName)

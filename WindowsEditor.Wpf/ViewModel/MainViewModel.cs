@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Input;
-using WindowsEditor.Wpf.DevMode;
 using CrossPlatformLogic;
 using CrossPlatformLogic.Network;
 using System;
@@ -32,7 +31,7 @@ namespace WindowsEditor.Wpf.ViewModel
             imageLoader = new ImageLoader();
             IsCheckBoxEnabled = true;
             networkClient = new NetworkClient();
-//            networkClient = new DebugNetworkClient();
+//            networkClient = new WindowsEditor.Wpf.DevMode.DebugNetworkClient();
             ImagesList = new ObservableCollection<string>(imageLoader.Images);
             SelectedImagePath = ImagesList.First();
             InitCommands();
