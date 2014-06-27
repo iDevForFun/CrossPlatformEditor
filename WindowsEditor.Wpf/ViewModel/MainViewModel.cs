@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System.Collections.ObjectModel;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Input;
 using CrossPlatformLogic;
 using CrossPlatformLogic.Network;
@@ -10,7 +12,6 @@ namespace WindowsEditor.Wpf.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
-        private const int ClientID = 1;
         private ICommand buttonCommand;
         private readonly ImageLoader imageLoader;
         private readonly INetworkClient networkClient;
@@ -19,16 +20,19 @@ namespace WindowsEditor.Wpf.ViewModel
         private Image image;
         private RelayCommand flipCommand;
         private RelayCommand listenCommand;
+        private ObservableCollection<string> imagesList;
+        private string selectedImagePath;
 
         public MainViewModel()
         {
             Title = "Our nice windows editor";
             imageLoader = new ImageLoader();
             networkClient = new NetworkClient();
-            ButtonCommand = new RelayCommand(_ => SelectImage(string.Empty, false));
-            FlipCommand=  new RelayCommand(_ => Flip(true), _ => Image != null);
-            ListenCommand = new RelayCommand(_ => Listen());
-
+            ImagesList = new ObservableCollection<string>(imageLoader.Images);
+            SelectedImagePath = ImagesList.First();
+            ButtonCommand = new RelayCommand(_ => SelectImage(SelectedImagePath, false));
+            FlipCommand = new RelayCommand(_ => Flip(true), _ => Image != null);
+            Listen();
         }
 
 
@@ -37,14 +41,18 @@ namespace WindowsEditor.Wpf.ViewModel
             networkClient.OnNetworkEvent()
                 .Subscribe(networkEvent =>
             {
-                if (networkEvent.ClientId != ClientID && networkEvent.Type == EventType.Flip)
+                switch (networkEvent.Type)
                 {
-                    Flip(false);
-                }
-
-                if (networkEvent.ClientId != ClientID && networkEvent.Type == EventType.Loaded)
-                {
-                    SelectImage(networkEvent.Data, false);
+                    case EventType.Loaded:
+                        var filename = networkEvent.Data;
+                        SelectedImagePath = filename;
+                        SelectImage(filename, false);
+                        break;
+                    case EventType.Flip:
+                        Flip(false);
+                        break;
+                    case EventType.Stop:
+                        break;
                 }
             });
         }
@@ -54,7 +62,7 @@ namespace WindowsEditor.Wpf.ViewModel
             if (FlipCommand.CanExecute(null))
             {
                 Image = imageLoader.FlipHorizontal(Image);  
-                if(report) networkClient.ReportFlip(ClientID);
+                if(report) networkClient.ReportFlip();
             }
             
         }
@@ -82,17 +90,6 @@ namespace WindowsEditor.Wpf.ViewModel
             }
         }
 
-        public RelayCommand ListenCommand
-        {
-            get { return listenCommand; }
-            set
-            {
-                if (Equals(value, listenCommand)) return;
-                listenCommand = value;
-                OnPropertyChanged();
-            }
-        }
-
         public string FilePath
         {
             get { return tbText; }
@@ -104,26 +101,37 @@ namespace WindowsEditor.Wpf.ViewModel
             }
         }
 
+        public ObservableCollection<string> ImagesList
+        {
+            get { return imagesList; }
+            set
+            {
+                if (Equals(value, imagesList)) return;
+                imagesList = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string SelectedImagePath
+        {
+            get { return selectedImagePath; }
+            set
+            {
+                if (value == selectedImagePath) return;
+                selectedImagePath = value;
+                OnPropertyChanged();
+            }
+        }
+
         private void SelectImage(string filename, bool report)
         {
-        //    var dlg = new OpenFileDialog
-        //    {
-        //        DefaultExt = ".jpg",
-        //        Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png"
-        //    };
-        //    var result = dlg.ShowDialog();
-
-        //    if (result != true) return;
-
-
-            //var filename = dlg.FileName;
-             if(string.IsNullOrWhiteSpace(filename)) filename = "RSV4-1.jpg";
+            if(string.IsNullOrWhiteSpace(filename)) filename = "RSV4-1.jpg";
             FilePath = filename;
             var img = imageLoader.LoadImage(filename);
             if (img != null)
             {
                 Image = img;
-                if(report) networkClient.ReportLoaded(filename, ClientID);
+                if(report) networkClient.ReportLoaded(filename);
             }
         }
 
@@ -143,7 +151,6 @@ namespace WindowsEditor.Wpf.ViewModel
             get { return image; }
             set
             {
-//                if (Equals(value, image)) return;
                 image = value;
                 FlipCommand.RaiseCanExecuteChanged();
                 OnPropertyChanged();
