@@ -89,7 +89,7 @@
                             <action selector="Click_Rotate:" target="-2" id="GYp-Z3-GrM"/>
                         </connections>
                     </button>
-                    <button id="SEk-Gn-sEU">
+                    <button hidden="YES" id="SEk-Gn-sEU">
                         <rect key="frame" x="498" y="436" width="61" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Edit" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bsw-tQ-PlW">

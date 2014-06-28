@@ -2,22 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MacEditor/MainWindowController.cs">
     <Files>
-      <File FileName="MacEditor/MainWindowController.cs" Line="37" Column="4" />
-      <File FileName="CrossPlatformLogic/ImageLoader.cs" Line="1" Column="1" />
-      <File FileName="CrossPlatformLogic/Network/NetworkClient.cs" Line="1" Column="1" />
-      <File FileName="CollaborationServer/CollaborationHub.cs" Line="1" Column="1" />
-      <File FileName="CrossPlatformLogic/Network/NetworkEvent.cs" Line="1" Column="1" />
-      <File FileName="MacEditor/MainWindow.designer.cs" Line="1" Column="1" />
+      <File FileName="MacEditor/MainWindowController.cs" Line="143" Column="5" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="MacEditor" expanded="True">
-            <Node name="MainWindowController.cs" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

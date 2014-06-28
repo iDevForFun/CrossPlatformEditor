@@ -35,6 +35,7 @@ namespace WindowsEditor.Wpf.ViewModel
             ImagesList = new ObservableCollection<string>(imageLoader.Images);
             SelectedImagePath = ImagesList.First();
             InitCommands();
+            IsEditorModeOn = true;
             Listen();
         }
 

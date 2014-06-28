@@ -25,11 +25,11 @@
             <Button
                         IsEnabled="{Binding IsEditorModeOn}"
                         Content="select file" Command="{Binding ButtonCommand}" Margin="12,0,0,0"/>
-            <CheckBox 
+            <!--<CheckBox 
                 IsEnabled="{Binding IsCheckBoxEnabled}"
                         Command="{Binding EditModeCommand}"
                         CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}, Mode=OneWay}"
-                        Margin="12, 0, 0,0" Content="Edit mode"/>
+                        Margin="12, 0, 0,0" Content="Edit mode"/>-->
         </StackPanel>
         <StackPanel Grid.Row="1" Margin="12,0" Grid.Column="0" Grid.ColumnSpan="2">
             <Border Margin="0,12" Background="LightGray">

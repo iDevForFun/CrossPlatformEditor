@@ -107,6 +107,9 @@ namespace MacEditor
 				}
 			});
 
+			ImageDropDown.Enabled = true;
+			SelectBtn.Enabled = true;
+
 		}
 
 		partial void Click_Button(NSObject sender)
@@ -142,11 +145,10 @@ namespace MacEditor
 				var nsImage = ConvertFromImage(image);
 
 				ImageView.Image = nsImage;
-				if(EditCheckBox.State == NSCellStateValue.On)
-				{
+			
 					FlipBtn.Enabled = true;
 					RotateBtn.Enabled = true;
-				}
+			
 			
 				if(report) client.ReportLoaded(fileName);
 				imageLoaded = true;
@@ -159,8 +161,12 @@ namespace MacEditor
 
 		private void SetEditMode(bool editable, bool report)
 		{
-			if (!editable) EditCheckBox.State = NSCellStateValue.Off;
-
+			if (!editable) {
+				EditCheckBox.State = NSCellStateValue.Off;
+				EditCheckBox.Enabled = false;
+			} else {
+				EditCheckBox.Enabled = true;
+			}
 				ImageDropDown.Enabled = editable;
 				SelectBtn.Enabled = editable;
 				if (imageLoaded) {
